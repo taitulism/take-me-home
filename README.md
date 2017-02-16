@@ -1,2 +1,2 @@
 # take-me-home
-My .dotfiles
+My .dotfiles and more
