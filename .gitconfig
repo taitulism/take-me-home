@@ -1,0 +1,39 @@
+[user]
+	email = taitulism@gmail.com
+	name = Itai Tenenbaum
+[push]
+	default = simple
+[alias]
+	l = log --graph --pretty=format:'%Cred%h - %Cgreen%s %C(cyan)(%ar)' -20
+	f = fetch
+	st = status
+	sts = status --short
+	aa = add -A .
+	au = add -u
+	ch = checkout
+	chm = checkout master
+	chd = checkout develop
+	chs = checkout staging
+	com = commit
+	cm = commit -m
+	cam = commit -am
+	br = branch
+	wbr = rev-parse --abbrev-ref HEAD
+	dbr = branch -D
+	nbr = checkout -b
+	brm = branch --merged
+	brnm = branch --no-merge
+	ms = merge --squash
+	hr = reset --hard
+	df = diff
+	dfh = diff HEAD
+	df1 = diff HEAD~1
+	df2 = diff HEAD~2
+	df3 = diff HEAD~3
+	dfw = diff --word-diff
+	dfwh = diff --word-diff HEAD
+	save = stash save
+	list = stash list
+	restore = stash pop
+	del = stash clear
+
