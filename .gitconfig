@@ -8,8 +8,9 @@
 	f = fetch
 	st = status
 	sts = status --short
-	aa = add -A .
-	au = add -u
+	sta = status --untracked-files
+	aa = add --all
+	au = add --update
 	ch = checkout
 	chm = checkout master
 	chd = checkout develop

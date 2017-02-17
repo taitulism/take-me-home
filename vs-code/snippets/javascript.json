@@ -1,0 +1,66 @@
+{
+/*
+	 // Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+	"console.log": {
+		"prefix": "clg",
+		"body": [
+			"console.log($1, $2);"
+		],
+		"description": "console.log();"
+	},
+	"function": {
+		"prefix": "fn",
+		"body": [
+			"function $1 ($2) {",
+			"\t$3",
+			"}"
+		],
+		"description": "function declaration"
+	},
+	"arrow function declaration": {
+		"prefix": "afn",
+		"body": [
+			"($1) => {",
+			"\t$2",
+			"}"
+		],
+		"description": "arrow function declaration"
+	},
+	"mocha test describe": {
+		"prefix": "desc",
+		"body": [
+			"describe('$1', () => {",
+			"\t$2",
+			"});"
+		],
+		"description": "mocha describe"
+	},
+	"mocha test it": {
+		"prefix": "itt",
+		"body": [
+			"it('$1', ($2) => {",
+			"\t$3",
+			"});"
+		],
+		"description": "mocha it"
+	},
+	"chai assertion": {
+		"prefix": "exp",
+		"body": [
+			"expect($1).to.$2"
+		],
+		"description": "chai expect"
+	}
+}
