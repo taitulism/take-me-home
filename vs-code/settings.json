@@ -1,0 +1,11 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "window.zoomLevel": 0,
+    "window.showFullPath": true,
+    "workbench.sideBar.location": "left",
+    "workbench.statusBar.visible": true,
+    "editor.snippetSuggestions": "top",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 60000,
+    "files.eol": "\n"
+}
