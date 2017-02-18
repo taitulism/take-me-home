@@ -13,7 +13,6 @@ shopt -s dirspell
 shopt -s checkwinsize
 shopt -s dotglob
 shopt -s extglob
-shopt -s failglob
 shopt -s globstar
 shopt -s histappend
 shopt -s histverify
