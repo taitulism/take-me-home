@@ -1,6 +1,6 @@
 # isClean = green
-# red    = staged but not commited
-# yellow = tracked but not staged
+# yellow = staged but not commited
+# red = tracked but not staged
 # purple = new untracked files
 # blink red = both modified (conflict)
 
