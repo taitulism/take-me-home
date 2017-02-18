@@ -1,3 +1,7 @@
+http://askubuntu.com/questions/22413/how-to-change-gnome-terminal-title
+tl;dr
+PROMPT_COMMAND='echo -ne "\033]0;SOME TITLE HERE\007"'
+
 https://ss64.com/bash/shopt.html
 
 set:
