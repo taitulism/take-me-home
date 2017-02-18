@@ -2,16 +2,23 @@
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+
+# see http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html for option details
+# shopt -s cdable_var       // set vars for directories (e.g. home=~, repos=~/code/repos)
+shopt -s cdspell
+shopt -s dirspell
 shopt -s checkwinsize
+shopt -s dotglob
+shopt -s expand_aliases
+shopt -s extglob
+shopt -s histappend
+shopt -s histverify
+shopt -s nocaseglob
+
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.

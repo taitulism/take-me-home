@@ -1,9 +1,15 @@
+function mkcdir() { mkdir $1 && cd $1; }
+
 alias cdh='cd ~'
 alias cd-='cd -'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
+
+alias mkdir='mkdir -pv'
+alias mkcd=mkcdir
+
 alias cls='clear'
 alias h='history'
 
@@ -17,6 +23,5 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-alias mkdir='mkdir -pv'
 
 alias upgrade='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
