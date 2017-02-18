@@ -1,0 +1,21 @@
+https://ss64.com/bash/shopt.html
+
+set:
+$ shopt -s
+
+unset:
+$ shopt -u
+
+
+* cdable_var	
+* cdspell 
+* checkwinsize - should be on by default
+* dotglob
+* expand_aliases - should be on by def
+* extglob
+* histappend - should be on
+* histverify
+* nocaseglob - didn't work. why?
+
+	
+    
