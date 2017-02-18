@@ -37,4 +37,3 @@
 	list = stash list
 	restore = stash pop
 	del = stash clear
-

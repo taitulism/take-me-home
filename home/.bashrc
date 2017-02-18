@@ -6,40 +6,36 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-
 # see http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html for option details
-# shopt -s cdable_var       // set vars for directories (e.g. home=~, repos=~/code/repos)
+shopt -s autocd
 shopt -s cdspell
 shopt -s dirspell
 shopt -s checkwinsize
 shopt -s dotglob
-shopt -s expand_aliases
 shopt -s extglob
+shopt -s failglob
+shopt -s globstar
 shopt -s histappend
 shopt -s histverify
 shopt -s nocaseglob
-
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+# shopt -s cdable_var       // set vars for directories (e.g. home=~, repos=~/code/repos)
+# shopt -s expand_aliases   // on by default?
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# \[\e]0;<SET_TERMINAL_TITLE>\a\]
-PS1='\[\e]0;\w\a\]\n[\[\033[01;34m\]\w\[\033[00m\]] \$ '
+PS1='\n[\[\033[01;34m\]\w\[\033[00m\]] \$ '
 
 # If this is an xterm set the title
-# case "$TERM" in
-# xterm*|rxvt*)
-#     PS1="\[\e]0;\w\a\]$PS1"
-#     ;;
-# *)
-#     ;;
-# esac
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;\w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
 
-# Alias definitions.
+# Load aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
