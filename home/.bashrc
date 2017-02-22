@@ -6,18 +6,18 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# see http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html for option details
-shopt -s autocd
-shopt -s cdspell
-shopt -s dirspell
-shopt -s checkwinsize
-shopt -s dotglob
-shopt -s extglob
-shopt -s globstar
-shopt -s histappend
-shopt -s histverify
-shopt -s nocaseglob
-# shopt -s cdable_var      // set vars for directories (e.g. home=~, repos=~/code/repos)
+# see https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html for option details
+shopt -s autocd        # do: "mydir" instead of "cd mydir"
+shopt -s cdspell       # auto fixes minor typos in directory names when cd
+shopt -s checkwinsize  # auto check & fix window size after each command
+shopt -s dotglob       # include .dotFiles when globbing
+shopt -s extglob       # extend glob matching (e.g. "ls abc*efg.txt")
+shopt -s globstar      # enable glob ** to match all files and directories. use **/ to match only directories
+shopt -s histappend    # when shell exits, append to history file instead of overwriting it
+shopt -s histverify    # when selecting a command from history with "!", don't auto run it
+# shopt -s cdable_var  # set global vars for directories (e.g. cd repos = cd ~/code/repos)
+# shopt -s dirspell    # auto fixes minor typos in directory names
+# shopt -s nocaseglob  # case InSeNsItIvE file expansion
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
