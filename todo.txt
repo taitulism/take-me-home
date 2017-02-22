@@ -15,5 +15,5 @@ nocaseglob - didn't work. why?
 
 document aliases!!!!!
 rename FNs to start with _
-	
+comment shopts in .bashrc
     
