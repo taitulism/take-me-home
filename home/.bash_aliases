@@ -1,5 +1,7 @@
 function mkcdir() { mkdir $1 && cd $1; }
 
+function histor() { history | tail $1; }
+
 alias cdh='cd ~'
 alias cd-='cd -'
 alias ..='cd ..'
@@ -12,6 +14,7 @@ alias mkcd=mkcdir
 
 alias cls='clear'
 alias h='history'
+alias hs=histor
 
 alias ls='ls --color=auto -AXF --group-directories-first'
 alias ls1='ls -1'
