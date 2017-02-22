@@ -1,5 +1,4 @@
 document aliases!!!!!
 rename FNs to start with _
-comment shopts in .bashrc
 shopt nocaseglob & dirspell - doesn't work. how to use?
 shopt cdable_vars - set global directories for that
