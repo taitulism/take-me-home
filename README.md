@@ -6,6 +6,11 @@ Install Stuff
 * `$ sudo apt-get install silversearcher-ag`
 
 
+.inputrc
+--------
+press `ESC` twice to clear the input buffer (command line)
+
+
 Aliases
 -------
 * cdh = `'cd ~'` - cd home
