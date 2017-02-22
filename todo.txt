@@ -1,4 +1,5 @@
-document aliases!!!!!
+document aliases
+document git aliases
 rename FNs to start with _
 shopt nocaseglob & dirspell - doesn't work. how to use?
 shopt cdable_vars - set global directories for that
