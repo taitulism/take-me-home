@@ -14,6 +14,6 @@ $ shopt -u
 nocaseglob - didn't work. why?
 
 document aliases!!!!!
-
+rename FNs to start with _
 	
     
