@@ -19,7 +19,6 @@
 	cm = commit -m
 	cam = commit -am
 	br = branch
-	wbr = rev-parse --abbrev-ref HEAD
 	dbr = branch -D
 	nbr = checkout -b
 	brm = branch --merged

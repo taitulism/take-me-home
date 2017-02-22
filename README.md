@@ -10,6 +10,7 @@ Aliases
 -------
 * cdh = `'cd ~'` - cd home
 * cd- = `'cd -'` cd to last directory
+* cd.. = `'cd ..'`
 * .. = `cd ..`
 * ... = `cd ../../`
 * .... = `cd ../../../`
@@ -51,7 +52,6 @@ Git Aliases
 * cm = `git commit -m`
 * cam = `git commit -am`
 * br = `git branch`
-* wbr = `git rev-parse --abbrev-ref HEAD`
 * dbr = `git branch -D`
 * nbr = `git checkout -b`
 * brm = `git branch --merged`
