@@ -13,5 +13,7 @@ $ shopt -u
 
 nocaseglob - didn't work. why?
 
+document aliases!!!!!
+
 	
     
