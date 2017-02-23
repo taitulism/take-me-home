@@ -1,5 +1,7 @@
 use links for vscode
 checkout "history 5"
+git alias -e for edit (--amend)
+create a script to copy the files to ~/ (and vscode to vscode dirs)
 add branch ahead/behind indicators < > 
 improve hs tool (grep? replace ctrl+r shortcut?)
 shopt cdable_vars - set global directories for that
