@@ -1,4 +1,4 @@
-use links to prevent copying files every change
+use links for vscode
 add branch ahead/behind indicators < > 
 improve hs tool (grep? replace ctrl+r shortcut?)
 shopt cdable_vars - set global directories for that
