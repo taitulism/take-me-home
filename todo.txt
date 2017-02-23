@@ -1,4 +1,5 @@
 use links to prevent copying files every change
+add branch ahead/behind indicators < > 
 improve hs tool (grep? replace ctrl+r shortcut?)
 shopt cdable_vars - set global directories for that
 shopt nocaseglob & dirspell - doesn't work. how to use?
