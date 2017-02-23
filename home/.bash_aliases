@@ -1,6 +1,6 @@
 function _mkcd() { mkdir $1 && cd $1; }
 
-function _history() { history | tail $1; }
+function _history() { history $1; }
 
 alias cdh='cd ~'
 alias cd-='cd -'
