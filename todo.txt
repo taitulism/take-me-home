@@ -1,4 +1,5 @@
 use links for vscode
+checkout "history 5"
 add branch ahead/behind indicators < > 
 improve hs tool (grep? replace ctrl+r shortcut?)
 shopt cdable_vars - set global directories for that
