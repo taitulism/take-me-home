@@ -14,8 +14,7 @@ alias mkdir='mkdir -pv'
 alias mkcd=_mkcd
 
 alias cls='clear'
-alias h='history'
-alias hs=_history
+alias his=_history
 
 alias ls='ls --color=auto -AXF --group-directories-first'
 alias ls1='ls -1'

@@ -22,7 +22,6 @@ Aliases
 * ..... = `cd ../../../../`
 * mkdir = `mkdir -pv`
 * cls = `clear`
-* h = `history`
 * ls = `ls --color=auto -AXF --group-directories-first`
 * ls1 = `ls -1`
 * ll = `ls -AlF --group-directories-first --human-readable`
@@ -36,7 +35,7 @@ Aliases
 
 Function Aliases
 ----------------
-* `hs` = history helper tool to show only last N commands. For example: `hs -5`
+* `his` = history helper tool to show only last N commands. For example: `his 5`
 * `mkcd` = mkdir and cd into it
 
 
