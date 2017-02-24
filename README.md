@@ -3,7 +3,8 @@ My .dotfiles and more
 
 Install Stuff
 -------------
-* `$ sudo apt-get install silversearcher-ag`
+* install .dotFiles (run from within the repo) `$ source ./deploy.sh`
+* install ag: `$ sudo apt-get install silversearcher-ag`
 
 
 .inputrc
