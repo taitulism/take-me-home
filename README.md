@@ -53,8 +53,11 @@ Git Aliases
 * chd = `git checkout develop`
 * chs = `git checkout staging`
 * com = `git commit`
+* come = `git commit --amend`
 * cm = `git commit -m`
+* cme = `git commit --amend -m`
 * cam = `git commit -am`
+* came = `git commit --amend -am`
 * br = `git branch`
 * dbr = `git branch -D`
 * nbr = `git checkout -b`
