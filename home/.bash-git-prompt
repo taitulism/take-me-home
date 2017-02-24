@@ -17,6 +17,22 @@ YELLOW=$'\033[1;33m'
 BLUE=$'\033[0;34m'
 RST_CLR=$'\033[0m' # Reset Color
 
+# symbols
+V="\u2714"
+X="\u2716"
+PLUS="\u271A"
+QUESTION="\u2753"
+ARROW_LEFT="\u21B6"
+ARROW_RIGHT="\u21B7"
+
+# parsed symbols
+SYM_CLEAN="$V"
+SYM_CONFLICT="$X"
+SYM_STAGED="$PLUS"
+SYM_NEWFILES="$QUESTION"
+SYM_AHEAD="$ARROW_LEFT"
+SYM_BEHIND="$ARROW_RIGHT"
+
 isGitRepository () {
     git rev-parse --is-inside-work-tree >& /dev/null
     echo $?
@@ -29,37 +45,37 @@ gitBranch () {
 
         if [ $(isClean) = "0" ] ; then
             if [ $(isAhead) = "0" ] ; then
-                branchName="\u21B6 $branchName"
+                branchName="$SYM_AHEAD $branchName"
             fi
 
             if [ $(isBehind) = "0" ] ; then
-                branchName="\u21B7 $branchName"
+                branchName="$SYM_BEHIND $branchName"
             fi
 
-            echo -e " (\u2714 $branchName)"
+            echo -e "\n$SYM_CLEAN $branchName"
             return
         fi
 
         if [ $(hasConflicts) = "0" ] ; then
-            echo -e " ($RED_BG\u2716 $branchName$RST_CLR)"
+            echo -e "\n($RED_BG$SYM_CONFLICT $branchName$RST_CLR)"
             return
         fi
 
         if [ $(hasNewFiles) = "0" ] ; then
-            branchName="$RED\u2753$RST_CLR $branchName"
+            branchName="$RED$SYM_NEWFILES$RST_CLR $branchName"
         fi
 
         if [ $(hasChanges) = "0" ] ; then
-            echo -e " ($RED$branchName$RST_CLR)"
+            echo -e "\n$RED$branchName$RST_CLR"
             return
         fi
 
         if [ $(hasStaged) = "0" ] ; then
-            echo -e " ($GREEN\u271A$RST_CLR $branchName)"
+            echo -e "\n($GREEN$SYM_STAGED$RST_CLR $branchName)"
             return
         fi
 
-        echo -e " ($branchName)"
+        echo -e "\n($branchName)"
     else
         echo ''
     fi
@@ -142,4 +158,4 @@ hasConflicts () {
     fi
 }
 
-export PS1=$'\n[\[$BLUE\]\w\[$RST_CLR\]]$(gitBranch) \[$YELLOW\]\$\[$RST_CLR\] '
+export PS1=$'\n\[$BLUE\]\w\[$RST_CLR\]$(gitBranch) \[$YELLOW\]\u27A4\[$RST_CLR\]  '
