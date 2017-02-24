@@ -28,6 +28,14 @@ gitBranch () {
         local statusText=`git status`
 
         if [ $(isClean) = "0" ] ; then
+            if [ $(isAhead) = "0" ] ; then
+                branchName="\u21B6 $branchName"
+            fi
+
+            if [ $(isBehind) = "0" ] ; then
+                branchName="\u21B7 $branchName"
+            fi
+
             echo -e " (\u2714 $branchName)"
             return
         fi
@@ -62,6 +70,28 @@ isClean () {
     _isClean=`echo $statusText | grep -c "$isCleanIndicator"`
 
     if [ "$_isClean" == "1" ] ; then
+        echo 0
+    else
+        echo 1
+    fi
+}
+
+isAheadIndicator="branch is ahead"
+isAhead () {
+    _isAhead=`echo $statusText | grep -c "$isAheadIndicator"`
+
+    if [ "$_isAhead" == "1" ] ; then
+        echo 0
+    else
+        echo 1
+    fi
+}
+
+isBehindIndicator="branch is behind"
+isBehind () {
+    _isBehind=`echo $statusText | grep -c "$isBehindIndicator"`
+
+    if [ "$_isBehind" == "1" ] ; then
         echo 0
     else
         echo 1
