@@ -20,18 +20,20 @@ RST_CLR=$'\033[0m' # Reset Color
 # symbols
 V="\u2714"
 X="\u2716"
-PLUS="\u271A"
+PLUS="\u2795"
 QUESTION="\u2753"
+EXCLAMATION="\u2757"
 ARROW_LEFT="\u21B6"
 ARROW_RIGHT="\u21B7"
 
 # parsed symbols
-SYM_CLEAN="$V"
-SYM_CONFLICT="$X"
-SYM_STAGED="$PLUS"
-SYM_NEWFILES="$QUESTION"
-SYM_AHEAD="$ARROW_LEFT"
-SYM_BEHIND="$ARROW_RIGHT"
+SYMB_CLEAN="$V"
+SYMB_CONFLICT="$X"
+SYMB_STAGED="$PLUS"
+SYMB_CHANGED="$EXCLAMATION"
+SYMB_NEWFILES="$QUESTION"
+SYMB_AHEAD="$ARROW_RIGHT"
+SYMB_BEHIND="$ARROW_LEFT"
 
 isGitRepository () {
     git rev-parse --is-inside-work-tree >& /dev/null
@@ -40,42 +42,41 @@ isGitRepository () {
 
 gitBranch () {
     if [ $(isGitRepository) = 0 ] ; then
-        local branchName=`git rev-parse --abbrev-ref HEAD`
         local statusText=`git status`
+        local branchName=`git rev-parse --abbrev-ref HEAD`
+        local branchStatus=""
 
         if [ $(isClean) = "0" ] ; then
             if [ $(isAhead) = "0" ] ; then
-                branchName="$SYM_AHEAD $branchName"
+                branchStatus="$SYMB_AHEAD "
+            elif [ $(isBehind) = "0" ] ; then
+                branchStatus="$SYMB_BEHIND "
             fi
 
-            if [ $(isBehind) = "0" ] ; then
-                branchName="$SYM_BEHIND $branchName"
-            fi
-
-            echo -e "\n$SYM_CLEAN $branchName"
+            echo -e "\n[ $branchName $SYMB_CLEAN $branchStatus]"
             return
         fi
+
 
         if [ $(hasConflicts) = "0" ] ; then
-            echo -e "\n($RED_BG$SYM_CONFLICT $branchName$RST_CLR)"
+            echo -e "\n[ ${RED_BG}${branchName} ${SYMB_CONFLICT}${RST_CLR} ]"
             return
         fi
 
-        if [ $(hasNewFiles) = "0" ] ; then
-            branchName="$RED$SYM_NEWFILES$RST_CLR $branchName"
+
+        if [ $(hasStaged) = "0" ] ; then
+            branchStatus="${GREEN}${SYMB_STAGED}${RST_CLR} "
         fi
 
         if [ $(hasChanges) = "0" ] ; then
-            echo -e "\n$RED$branchName$RST_CLR"
-            return
+            branchStatus="${branchStatus}${RED}${SYMB_CHANGED}${RST_CLR} "
         fi
 
-        if [ $(hasStaged) = "0" ] ; then
-            echo -e "\n($GREEN$SYM_STAGED$RST_CLR $branchName)"
-            return
+        if [ $(hasNewFiles) = "0" ] ; then
+            branchStatus="${branchStatus}${RED}${SYMB_NEWFILES}${RST_CLR} "
         fi
 
-        echo -e "\n($branchName)"
+        echo -e "\n[ $branchName $branchStatus]"
     else
         echo ''
     fi
