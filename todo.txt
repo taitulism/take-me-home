@@ -1,3 +1,2 @@
 * improve hs tool (prompt selection)
-* shopt cdable_vars - set global directories for that
 * shopt nocaseglob & dirspell - doesn't work. how to use?
