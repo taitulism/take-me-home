@@ -165,4 +165,4 @@ hasConflicts () {
     fi
 }
 
-export PS1=$'\n\[$BLUE\]\w\[$RST_CLR\]$(gitBranch) \[$YELLOW\]\u27A4\[$RST_CLR\]  '
+export PS1=$'\n\[$BLUE\]\w\[$RST_CLR\]$(gitBranch)\n\[$YELLOW\]\u27A4\[$RST_CLR\]  '
