@@ -48,13 +48,13 @@ gitBranch () {
                 branchStatus="$SYMB_DIVERGED "
             fi
 
-            echo -e "\n$branchName $SYMB_CLEAN $branchStatus"
+            echo -e "\n($branchName $SYMB_CLEAN $branchStatus)"
             return
         fi
 
 
         if [ $(hasConflicts) = "0" ] ; then
-            echo -e "\n${RED_BG}${branchName} ${SYMB_CONFLICT} ${RST_CLR}"
+            echo -e "\n(${RED_BG}${branchName} ${SYMB_CONFLICT} ${RST_CLR})"
             return
         fi
 
@@ -71,7 +71,7 @@ gitBranch () {
             branchStatus="${branchStatus}${RED}${SYMB_NEWFILES}${RST_CLR} "
         fi
 
-        echo -e "\n$branchName $branchStatus"
+        echo -e "\n($branchName $branchStatus)"
     else
         echo ''
     fi
