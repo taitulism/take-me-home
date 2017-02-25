@@ -3,8 +3,8 @@
 HISTCONTROL=ignoreboth
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=2000
+HISTFILESIZE=10000
 
 # see https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html for option details
 # shopt -s dirspell    # auto fixes minor typos in directory names
