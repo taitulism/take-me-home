@@ -53,13 +53,13 @@ gitBranch () {
                 branchStatus="$SYMB_BEHIND "
             fi
 
-            echo -e "\n[ $branchName $SYMB_CLEAN $branchStatus]"
+            echo -e "\n$branchName $SYMB_CLEAN $branchStatus"
             return
         fi
 
 
         if [ $(hasConflicts) = "0" ] ; then
-            echo -e "\n[ ${RED_BG}${branchName} ${SYMB_CONFLICT}${RST_CLR} ]"
+            echo -e "\n${RED_BG}${branchName} ${SYMB_CONFLICT}${RST_CLR}"
             return
         fi
 
@@ -69,14 +69,14 @@ gitBranch () {
         fi
 
         if [ $(hasChanges) = "0" ] ; then
-            branchStatus="${branchStatus}${RED}${SYMB_CHANGED}${RST_CLR} "
+            branchStatus="${branchStatus}${RED}${SYMB_CHANGED}${RST_CLR}"
         fi
 
         if [ $(hasNewFiles) = "0" ] ; then
             branchStatus="${branchStatus}${RED}${SYMB_NEWFILES}${RST_CLR} "
         fi
 
-        echo -e "\n[ $branchName $branchStatus]"
+        echo -e "\n$branchName $branchStatus"
     else
         echo ''
     fi
