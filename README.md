@@ -36,8 +36,13 @@ Aliases
 
 Function Aliases
 ----------------
-* `his` = history helper tool to show only last N commands. For example: `his 5`
 * `mkcd` = mkdir and cd into it
+* `hs` = history helper tool to show only last N commands. For example:  
+```sh
+hs 5      # show last 5 cmds
+hs git    # show all git cmds
+hs git 5  # show last 5 git cmds
+```
 
 
 Git Aliases

@@ -1,6 +1,12 @@
 function _mkcd() { mkdir $1 && cd $1; }
 
-function _history() { history $1; }
+function _history() {
+    if echo $1 | egrep -q '^[0-9]+$'; then
+        history $1
+    else
+        history $2 | grep "$1"
+    fi
+}
 
 alias cdh='cd ~'
 alias cd-='cd -'
@@ -14,7 +20,7 @@ alias mkdir='mkdir -pv'
 alias mkcd=_mkcd
 
 alias cls='clear'
-alias his=_history
+alias hs=_history
 
 alias ls='ls --color=auto -AXF --group-directories-first'
 alias ls1='ls -1'
