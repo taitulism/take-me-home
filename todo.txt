@@ -1,2 +1,3 @@
 * improve hs tool (prompt selection)
 * shopt nocaseglob & dirspell - doesn't work. how to use?
+* http://www.unixlore.net/articles/save-time-command-line-bash-shell.html
