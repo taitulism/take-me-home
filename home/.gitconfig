@@ -16,7 +16,8 @@
 	chd = checkout develop
 	chs = checkout staging
 	com = commit
-	come = commit --amend 
+	come = commit --amend
+	cae = commit -a --amend
 	cm = commit -m
 	cme = commit --amend -m
 	cam = commit -am
