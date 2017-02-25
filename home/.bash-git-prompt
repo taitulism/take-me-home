@@ -1,14 +1,5 @@
 #!/bin/bash
 
-# clean = white V
-# staged = green +
-# tracked (modified) = red
-# tracked and staged = red
-# untracked = ?
-# conflict = red background
-
-# ahead/behind = white <>
-
 # colors
 RED=$'\033[0;31m'
 RED_BG=$'\033[31;7m'
@@ -63,7 +54,7 @@ gitBranch () {
 
 
         if [ $(hasConflicts) = "0" ] ; then
-            echo -e "\n${RED_BG}${branchName} ${SYMB_CONFLICT}${RST_CLR}"
+            echo -e "\n${RED_BG}${branchName} ${SYMB_CONFLICT} ${RST_CLR}"
             return
         fi
 
