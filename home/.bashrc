@@ -17,6 +17,7 @@ shopt -s extglob       # extend glob matching (e.g. "ls abc*efg.txt")
 shopt -s globstar      # enable glob ** to match all files and directories. use **/ to match only directories
 shopt -s histappend    # when shell exits, append to history file instead of overwriting it
 shopt -s histverify    # when selecting a command from history with "!", don't auto run it
+shopt -s xpg_echo      # echo builtin expands backslash-escape sequences by default
 shopt -s cdable_vars   # set global vars for directories (e.g. cd repos = cd ~/code/repos)
 
 # cdable_vars
