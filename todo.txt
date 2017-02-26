@@ -1,1 +1,0 @@
-* shopt nocaseglob & dirspell - doesn't work. how to use?
