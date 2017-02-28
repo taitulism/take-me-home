@@ -1,8 +1,8 @@
+* z.sh https://github.com/rupa/z/blob/master/z.sh
+  $ git clone https://github.com/rupa/z.git
 * change var names to start with a Capitalized letter to prevent var tab completion
 * deploy didnt copy
 * (append instead?) backup .gitconfig, vim, input...
 * git clean was wrong (directory vs tree)
 * bash didn't source
 * add deploy logs for different steps
-* z.sh https://github.com/rupa/z/blob/master/z.sh
-  $ git clone https://github.com/rupa/z.git
