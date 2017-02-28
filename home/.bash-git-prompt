@@ -77,7 +77,7 @@ gitBranch () {
     fi
 }
 
-isCleanIndicator="working directory clean"
+isCleanIndicator="nothing to commit"
 isClean () {
     _isClean=`echo $statusText | grep -c "$isCleanIndicator"`
 
