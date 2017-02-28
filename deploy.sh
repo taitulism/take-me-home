@@ -6,7 +6,7 @@ if [ -e ~/.bashrc ] ; then
 fi
 
 # copy .dotFiles
-cp -v ./home/* ~/
+cp -v ./home/.* ~/
 
 # copy vs-code stuff
 if [ -d ~/.config/Code/User ] ; then
