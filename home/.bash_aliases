@@ -8,7 +8,6 @@ function _history() {
     fi
 }
 
-alias cdh='cd ~'
 alias cd-='cd -'
 alias cd..='cd ..'
 alias ..='cd ..'
