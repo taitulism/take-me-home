@@ -60,3 +60,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# z.sh
+source ./z/z.sh

@@ -8,6 +8,9 @@ fi
 # copy .dotFiles
 cp -v ./home/.* ~/
 
+# copy z.sh
+cp -v ./z/z.sh ~/
+
 # copy vs-code stuff
 if [ -d ~/.config/Code/User ] ; then
     cp -v -r ./vs-code/* ~/.config/Code/User
