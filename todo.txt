@@ -1,4 +1,2 @@
 * cp files individually
-* rename .z
-* use prompt to set git gitconfig
 * change var names to start with a Capitalized letter to prevent var tab completion
