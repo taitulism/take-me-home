@@ -1,1 +1,3 @@
+* add deploy warnings when stuff failed
+* change deploy log color
 * change var names to start with a Capitalized letter to prevent var tab completion

@@ -9,7 +9,7 @@ RED_BG=$'\e[31;7m'
 RST_CLR=$'\e[;0m' # Reset Color
 
 function log () {
-    echo "${GRAY_BG}* $1${RST_CLR}"
+    echo "${YELLOW}* $1${RST_CLR}"
 }
 
 function warn () {
@@ -22,8 +22,8 @@ function append () {
 
 # prompts    
 read -p "Backup ~/.bashrc? [y/n] " bkpBashrc
-read -p "Enter name (for .gitconfig) " gitConfigName
-read -p "Enter email (for .gitconfig) " gitConfigEmail
+read -p "Enter git name: " gitConfigName
+read -p "Enter git email: " gitConfigEmail
 
 # ~/bashrc exists? prompt for backup
 if [ -e ~/.bashrc ] ; then
@@ -60,7 +60,7 @@ isGitInstalled=$?
 
 if [ $isGitInstalled -eq 0 ]; then
     log "Copy .gitconfig"
-    cp -v ./home/.gitconfig ~/
+    # cp -v ./home/.gitconfig ~/
 
     # set git name
     if [ ! "$gitConfigName" == "" ] ; then
@@ -87,3 +87,5 @@ source ~/.bashrc
 # ag
 log "install ag (silversearcher)"
 sudo apt-get install silversearcher-ag
+
+echo "${GREEN_BG}Done. Enjoy :]${RST_CLR}"
