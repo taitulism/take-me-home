@@ -24,15 +24,20 @@ shopt -s cdable_vars   # set global vars for directories (e.g. cd repos = cd ~/c
 c="$HOME/code"
 r="$HOME/code/repos"
 
+# Make Tab autocomplete regardless of filename case
+set completion-ignore-case on
+
+# List all matches in case multiple possible completions are possible
+set show-all-if-ambiguous on
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-
-# use bash-git-prompt to show git branch status in the command prompt (PS1)
-if [ -e $HOME/.bash-git-prompt ] ; then
-    . $HOME/.bash-git-prompt
+# use git-prompt to show git branch status in the command prompt (PS1)
+if [ -e $HOME/.git-prompt ] ; then
+    . $HOME/.git-prompt
 else
-    echo ".bash-git-prompt file is missing"
+    echo "~/.git-prompt file is missing"
     PS1='\n[\[\033[01;34m\]\w\[\033[00m\]] \$ '
 fi
 

@@ -35,17 +35,6 @@ if [ -e ~/.bashrc ] ; then
     fi
 fi
 
-# .dotFiles
-# =========
-# V - .bashrc
-# V - .aliases
-#   - .bash-git-prompt
-# V - .inputrc
-# V - .vimrc
-# V - .gitconfig
-# V - .z
-
-
 # copy .dotFiles
 log "Copy .bashrc"
 cp -v ./home/.bashrc ~/
@@ -53,8 +42,8 @@ cp -v ./home/.bashrc ~/
 log "Copy .aliases"
 cp -v ./home/.aliases ~/
 
-log "Copy .bash-git-prompt"
-cp -v ./home/.bash-git-prompt ~/
+log "Copy .git-prompt"
+cp -v ./home/.git-prompt ~/
 
 log "Copy .inputrc"
 cp -v ./home/.inputrc ~/

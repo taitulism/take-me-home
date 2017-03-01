@@ -4,12 +4,12 @@ My .dotfiles and more
 Install Stuff
 -------------
 * install .dotFiles (run from within the repo) `$ source ./deploy.sh`
-* install ag: `$ sudo apt-get install silversearcher-ag`
 
 
 .inputrc
 --------
-press `ESC` twice to clear the input buffer (command line)
+* Press `ESC` twice to clear the input buffer (command line)
+* Use `shift+tab` to cycle through completion options
 
 
 Aliases
