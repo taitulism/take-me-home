@@ -43,7 +43,7 @@ fi
 # V - .inputrc
 # V - .vimrc
 # V - .gitconfig
-#   - .z
+# V - .z
 
 
 # copy .dotFiles
@@ -92,7 +92,7 @@ else
     warn "vs-code directory is not found: ~/.config/Code/User"
 fi
 
-log "source the new ~/.bashrc"
+log "source new ~/.bashrc"
 source ~/.bashrc
 
 # what's next?
