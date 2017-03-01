@@ -14,7 +14,6 @@ press `ESC` twice to clear the input buffer (command line)
 
 Aliases
 -------
-* cdh = `'cd ~'` - cd home
 * cd- = `'cd -'` cd to last directory
 * cd.. = `'cd ..'`
 * .. = `cd ..`

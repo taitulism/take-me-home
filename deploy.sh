@@ -38,7 +38,7 @@ fi
 # .dotFiles
 # =========
 # V - .bashrc
-#   - .bash_aliases
+# V - .aliases
 #   - .bash-git-prompt
 # V - .inputrc
 # V - .vimrc
@@ -50,8 +50,8 @@ fi
 log "Copy .bashrc"
 cp -v ./home/.bashrc ~/
 
-log "Copy .bash_aliases"
-cp -v ./home/.bash_aliases ~/
+log "Copy .aliases"
+cp -v ./home/.aliases ~/
 
 log "Copy .bash-git-prompt"
 cp -v ./home/.bash-git-prompt ~/
