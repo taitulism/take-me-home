@@ -95,8 +95,6 @@ fi
 log "source new ~/.bashrc"
 source ~/.bashrc
 
-# what's next?
-echo ""
-log "To install 'ag' search run:${RST_CLR} ${YELLOW}$ sudo apt-get install silversearcher-ag${RST_CLR}"
-echo ""
-warn "Don't forget to enter your git user data in ~/.gitconfig"
+# ag
+log "install ag (silversearcher)"
+sudo apt-get install silversearcher-ag

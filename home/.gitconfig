@@ -1,5 +1,5 @@
 [push]
-	default = simple
+	default = current
 [alias]
 	l = log --graph --pretty=format:'%Cred%h - %Cgreen%s %C(cyan)(%ar)' -20
 	f = fetch
