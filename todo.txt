@@ -1,5 +1,4 @@
 * cp files individually
-* prompt all questions first; save as vars
 * rename .z
 * use prompt to set git gitconfig
 * change var names to start with a Capitalized letter to prevent var tab completion

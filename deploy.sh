@@ -20,9 +20,13 @@ function append () {
     echo $1 >> $2
 }
 
+# prompts    
+read -p "Backup ~/.bashrc? [y/n] " bkpBashrc
+read -p "Enter name (for .gitconfig) " gitConfigName
+read -p "Enter email (for .gitconfig) " gitConfigEmail
+
 # ~/bashrc exists? prompt for backup
 if [ -e ~/.bashrc ] ; then
-    read -p "Backup ~/.bashrc? [y/n] " bkpBashrc
 
     # backup current .bashrc
     if [ $bkpBashrc = "y" ] ; then
@@ -70,13 +74,11 @@ if [ $isGitInstalled -eq 0 ]; then
     cp -v ./home/.gitconfig ~/
 
     # set git name
-    read -p "Enter name (for .gitconfig) " gitConfigName
     if [ ! "$gitConfigName" == "" ] ; then
         git config --global user.name $gitConfigName
     fi
 
     # set git email
-    read -p "Enter email (for .gitconfig) " gitConfigEmail
     if [ ! "$gitConfigEmail" == "" ] ; then
         git config --global user.email $gitConfigEmail
     fi
