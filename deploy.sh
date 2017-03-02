@@ -20,10 +20,16 @@ function append () {
     echo $1 >> $2
 }
 
+# check if git installed
+git --version 2>&1 >/dev/null
+isGitInstalled=$?
+
 # prompts    
 read -p "Backup ~/.bashrc? [y/n] " bkpBashrc
-read -p "Enter git name: " gitConfigName
-read -p "Enter git email: " gitConfigEmail
+if [ $isGitInstalled = 0 ]; then
+    read -p "Enter git name: " gitConfigName
+    read -p "Enter git email: " gitConfigEmail
+fi
 
 # ~/bashrc exists? prompt for backup
 if [ -e ~/.bashrc ] ; then
@@ -54,11 +60,7 @@ cp -v ./home/.vimrc ~/
 log "Copy .z"
 cp -v ./home/.z ~/
 
-# check if git installed
-git --version 2>&1 >/dev/null
-isGitInstalled=$?
-
-if [ $isGitInstalled -eq 0 ]; then
+if [ $isGitInstalled = 0 ]; then
     log "Copy .gitconfig"
     cp -v ./home/.gitconfig ~/
 
