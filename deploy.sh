@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # colors
-YELLOW=$'\e[1;33m'
+# YELLOW=$'\e[1;33m'
+ORANGE=$'\e[0;33m'
 BLUE_BG=$'\e[34;7m'
 GREEN_BG=$'\e[32;7m'
-GRAY_BG=$'\e[37;7m'
 RED_BG=$'\e[31;7m'
 RST_CLR=$'\e[;0m' # Reset Color
 
 function log () {
-    echo "${YELLOW}* $1${RST_CLR}"
+    echo "${ORANGE}* $1${RST_CLR}"
 }
 
 function warn () {
@@ -87,7 +87,7 @@ log "source new ~/.bashrc"
 source ~/.bashrc
 
 # ag
-log "install ag (silversearcher)"
+log "sudo install ag (silversearcher)"
 sudo apt-get install silversearcher-ag
 
 echo "${GREEN_BG}Done. Enjoy :]${RST_CLR}"
