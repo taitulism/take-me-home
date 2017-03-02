@@ -60,7 +60,7 @@ isGitInstalled=$?
 
 if [ $isGitInstalled -eq 0 ]; then
     log "Copy .gitconfig"
-    # cp -v ./home/.gitconfig ~/
+    cp -v ./home/.gitconfig ~/
 
     # set git name
     if [ ! "$gitConfigName" == "" ] ; then
