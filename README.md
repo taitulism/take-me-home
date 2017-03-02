@@ -3,7 +3,8 @@ My .dotfiles and more
 
 Install Stuff
 -------------
-* install .dotFiles (run from within the repo) `$ source ./deploy.sh`
+* `$ git clone git@github.com:taitulism/take-me-home.git`
+* Run from within the repo: `$ source ./deploy.sh`
 
 
 .inputrc
