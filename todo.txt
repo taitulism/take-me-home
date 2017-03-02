@@ -1,3 +1,4 @@
 * add deploy warnings when stuff failed
 * change deploy log color
+* fix git prompt: end with a trailing \n
 * change var names to start with a Capitalized letter to prevent var tab completion
