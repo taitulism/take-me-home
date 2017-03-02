@@ -25,14 +25,14 @@ git --version 2>&1 >/dev/null
 isGitInstalled=$?
 
 # prompts    
-read -p "Backup ~/.bashrc? [y/n] " bkpBashrc
-if [ $isGitInstalled = 0 ]; then
+if [ "$isGitInstalled" = 0 ] ; then
     read -p "Enter git name: " gitConfigName
     read -p "Enter git email: " gitConfigEmail
 fi
 
 # ~/bashrc exists? prompt for backup
-if [ -e ~/.bashrc ] ; then
+if [ -e "~/.bashrc" ] ; then
+    read -p "Backup ~/.bashrc? [y/n] " bkpBashrc
 
     # backup current .bashrc
     if [ $bkpBashrc = "y" ] ; then
@@ -43,26 +43,26 @@ fi
 
 # copy .dotFiles
 log "Copy .bashrc"
-cp -v ./home/.bashrc ~/
+cp ./home/.bashrc ~/
 
 log "Copy .aliases"
-cp -v ./home/.aliases ~/
+cp ./home/.aliases ~/
 
 log "Copy .git-prompt"
-cp -v ./home/.git-prompt ~/
+cp ./home/.git-prompt ~/
 
 log "Copy .inputrc"
-cp -v ./home/.inputrc ~/
+cp ./home/.inputrc ~/
 
 log "Copy .vimrc"
-cp -v ./home/.vimrc ~/
+cp ./home/.vimrc ~/
 
 log "Copy .z"
-cp -v ./home/.z ~/
+cp ./home/.z ~/
 
-if [ $isGitInstalled = 0 ]; then
+if [ "$isGitInstalled" = 0 ] ; then
     log "Copy .gitconfig"
-    cp -v ./home/.gitconfig ~/
+    cp ./home/.gitconfig ~/
 
     # set git name
     if [ ! "$gitConfigName" == "" ] ; then
