@@ -20,16 +20,6 @@ function append () {
     echo $1 >> $2
 }
 
-# check if git installed
-git --version 2>&1 >/dev/null
-isGitInstalled=$?
-
-# prompts    
-if [ "$isGitInstalled" = 0 ] ; then
-    read -p "Enter git name: " gitConfigName
-    read -p "Enter git email: " gitConfigEmail
-fi
-
 # ~/bashrc exists? prompt for backup
 if [ -e "~/.bashrc" ] ; then
     read -p "Backup ~/.bashrc? [y/n] " bkpBashrc
@@ -41,39 +31,28 @@ if [ -e "~/.bashrc" ] ; then
     fi
 fi
 
-# copy .dotFiles
-log "Copy .bashrc"
-cp ./home/.bashrc ~/
+# create symlinks to .dotFiles
+log "Symlink .bashrc"
+ln -sTf $PWD/home/.bashrc ~/.bashrc
 
-log "Copy .aliases"
-cp ./home/.aliases ~/
+log "Symlink .aliases"
+ln -sTf $PWD/home/.aliases ~/.aliases
 
-log "Copy .git-prompt"
-cp ./home/.git-prompt ~/
+log "Symlink .git-prompt"
+ln -sTf $PWD/home/.git-prompt ~/.git-prompt
 
-log "Copy .inputrc"
-cp ./home/.inputrc ~/
+log "Symlink .inputrc"
+ln -sTf $PWD/home/.inputrc ~/.inputrc
 
-log "Copy .vimrc"
-cp ./home/.vimrc ~/
+log "Symlink .vimrc"
+ln -sTf $PWD/home/.vimrc ~/.vimrc
 
-log "Copy .z"
-cp ./home/.z ~/
+log "Symlink .z"
+ln -sTf $PWD/home/.z ~/.z
 
-if [ "$isGitInstalled" = 0 ] ; then
-    log "Copy .gitconfig"
-    cp ./home/.gitconfig ~/
+log "Symlink .gitconfig"
+ln -sTf $PWD/home/.gitconfig ~/.gitconfig
 
-    # set git name
-    if [ ! "$gitConfigName" == "" ] ; then
-        git config --global user.name $gitConfigName
-    fi
-
-    # set git email
-    if [ ! "$gitConfigEmail" == "" ] ; then
-        git config --global user.email $gitConfigEmail
-    fi
-fi
 
 # copy vs-code stuff
 if [ -d ~/.config/Code/User ] ; then
