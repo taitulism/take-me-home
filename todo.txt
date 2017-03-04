@@ -1,1 +1,2 @@
 * unset vars
+* git prompt - try move sign to the left. just try.
