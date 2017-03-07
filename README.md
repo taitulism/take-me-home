@@ -1,10 +1,11 @@
 # take-me-home
 My .dotfiles and more
 
+
 Install Stuff
 -------------
 * `$ git clone git@github.com:taitulism/take-me-home.git`
-* Run from within the repo: `$ source ./deploy.sh`
+* `$ source take-me-home.sh`
 
 
 .inputrc
