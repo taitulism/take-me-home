@@ -1,5 +1,24 @@
 #!/bin/bash
 
+# remember current take-me-home repo path
+# $path_to_take_me_home=$PWD
+
+# mkdir ~/take-me-home
+# cd ~/take-me-home
+
+# git clone z.sh
+# copy and rename z.sh stuff
+# git clone van-gosh
+
+# cd van-gosh
+# source van-gosh
+
+# cd back to take-me-home
+# cd $path_to_take_me_home
+
+# use van-gosh colorz and loggers
+# symlink vs-code stuff
+
 # colors
 # YELLOW=$'\e[1;33m'
 ORANGE=$'\e[0;33m'
@@ -14,10 +33,6 @@ function log () {
 
 function warn () {
     echo "${RED_BG}$1${RST_CLR}"
-}
-
-function append () {
-    echo $1 >> $2
 }
 
 # ~/bashrc exists? prompt for backup
