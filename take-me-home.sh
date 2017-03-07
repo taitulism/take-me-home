@@ -7,18 +7,14 @@ home_TMH_path=$HOME/take-me-home
 
 mkdir "$home_TMH_path"
 
-# git clone z.sh
-# copy and rename z.sh stuff
-
-# clone van-gosh
+logInfo "Clone van-gosh"
 git clone git@github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
 
-# cd van-gosh
+logInfo "Clone z.sh"
+git clone git@github.com:rupa/z.git $home_TMH_path/z
+
 echo $home_TMH_path/van-gosh/van-go.sh
 source $home_TMH_path/van-gosh/van-go.sh
-
-# use van-gosh colorz and loggers
-# symlink vs-code stuff
 
 # ~/bashrc exists? prompt for backup
 if [ -e "~/.bashrc" ] ; then
