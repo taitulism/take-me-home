@@ -1,3 +1,9 @@
-* unset vars
+* create ~/take-me-home directory
+    * clone z
+    * clone van-gosh
+    * source van-gosh
+
+* rename deploy >> take-me-home (+docs)
 * git prompt - try move sign to the left. just try.
-* think: how to use colors and when
+* vs code - symlinks
+* unset vars
