@@ -2,7 +2,9 @@
     * clone z
     * clone van-gosh
     * source van-gosh
-
+    * re-source z
+* git alias rename ls1 > lsl
+* git alias push -f
 * git prompt - try move sign to the left. just try.
 * vs code - symlinks
 * unset vars
