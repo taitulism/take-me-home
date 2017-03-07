@@ -22,7 +22,7 @@ alias cls='clear'
 alias hs=_history
 
 alias ls='ls --color=auto -AXF --group-directories-first'
-alias ls1='ls -1'
+alias lsl='ls -1'
 alias ll='ls -AlF --group-directories-first --human-readable'
 alias lll='ll | less'
 

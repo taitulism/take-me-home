@@ -25,7 +25,7 @@ Aliases
 * mkdir = `mkdir -pv`
 * cls = `clear`
 * ls = `ls --color=auto -AXF --group-directories-first`
-* ls1 = `ls -1`
+* lsl = `ls -1`
 * ll = `ls -AlF --group-directories-first --human-readable`
 * lll = `ll | less`
 * rm = `rm -I --preserve-root`
