@@ -17,11 +17,8 @@ git clone git@github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
 echo $home_TMH_path/van-gosh/van-go.sh
 source $home_TMH_path/van-gosh/van-go.sh
 
-logFail "success"
-
 # use van-gosh colorz and loggers
 # symlink vs-code stuff
-
 
 # ~/bashrc exists? prompt for backup
 if [ -e "~/.bashrc" ] ; then
