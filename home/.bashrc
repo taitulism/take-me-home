@@ -66,7 +66,5 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# z.sh
-# https://github.com/rupa/z
-_Z_DATA="$HOME/.z_data"
-source $HOME/.z
+# z.sh - https://github.com/rupa/z
+source $HOME/take-me-home/z.sh
