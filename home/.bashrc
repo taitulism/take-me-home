@@ -66,5 +66,8 @@ if ! shopt -oq posix; then
     fi
 fi
 
+# van-gosh - https://github.com/taitulism/van-gosh
+source $HOME/take-me-home/van-gosh/van-go.sh
+
 # z.sh - https://github.com/rupa/z
-source $HOME/take-me-home/z.sh
+source $HOME/take-me-home/z/z.sh
