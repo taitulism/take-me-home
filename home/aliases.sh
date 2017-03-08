@@ -33,4 +33,5 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 alias grep='grep --color=auto'
 
+alias debi='sudo dpkg -i'
 alias upgrade='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
