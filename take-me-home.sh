@@ -14,16 +14,13 @@ TMH_repo_path=$PWD
 home_TMH_path=$HOME/take-me-home
 home_TMH_backups_path=$home_TMH_path/backups
 
-logInfo '- mkdir ~/take-me-home'
 mkdir "$home_TMH_path"
-
-logInfo '- mkdir ~/take-me-home/backups'
 mkdir "$home_TMH_backups_path"
 
-logInfo '- Clone van-gosh'
+echo '- Clone van-gosh'
 git clone git@github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
 
-logInfo '- Clone z.sh'
+echo '- Clone z.sh'
 git clone git@github.com:rupa/z.git $home_TMH_path/z
 
 source $home_TMH_path/van-gosh/van-go.sh
@@ -35,7 +32,8 @@ if [ -L ~/.gitconfig ] ; then
     backupFile .gitconfig
 fi
 
-# create symlinks to .dotFiles
+
+# create symlinks
 logInfo '- Symlink .bashrc'
 ln -sTf $PWD/home/.bashrc ~/.bashrc
 
