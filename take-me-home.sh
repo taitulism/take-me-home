@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function backupFile () {
-    filename=$1
+    local filename=$1
 
     logInfo "- Backup ~/$filename"
 
@@ -9,8 +9,6 @@ function backupFile () {
 }
 
 # TMH = Take Me Home
-# remember current TMH repo path
-TMH_repo_path=$PWD
 home_TMH_path=$HOME/take-me-home
 home_TMH_backups_path=$home_TMH_path/backups
 
@@ -53,19 +51,37 @@ logInfo '- Symlink .gitconfig'
 ln -sTf $PWD/home/.gitconfig ~/.gitconfig
 
 
-# copy vs-code stuff
-if [ -d ~/.config/Code/User ] ; then
-    logInfo '- Copy vs-code stuff'
-    cp -v -r ./vs-code/* ~/.config/Code/User
+# vs-code stuff
+vs_code_User_path=~/.config/Code/User
+if [ -d "$vs_code_User_path" ] ; then
+    logInfo '- Symlink vs-code stuff'
+
+    # keybindings & settings
+    ln -sf $PWD/vs-code/keybindings.json $vs_code_User_path/keybindings.json 
+    ln -sf $PWD/vs-code/settings.json $vs_code_User_path/settings.json 
+
+    # create vs-code snippets dir if not exists
+    if [ ! -d "$vs_code_User_path/snippets" ] ; then
+        mkdir $vs_code_User_path/snippets
+    fi
+
+    # snippets
+    ln -sf $PWD/vs-code/snippets/html.json $vs_code_User_path/snippets/html.json
+    ln -sf $PWD/vs-code/snippets/javascript.json $vs_code_User_path/snippets/javascript.json
 else
-    logWarn 'vs-code directory is not found: ~/.config/Code/User'
+    logWarn 'vs-code directory is not found: $vs_code_User_path'
 fi
+unset vs_code_User_path
+
 
 logInfo '- source new ~/.bashrc'
 source ~/.bashrc
 
-# ag
+
 logInfo '- sudo install ag (silversearcher)'
 sudo apt-get install silversearcher-ag
+
+unset home_TMH_path
+unset home_TMH_backups_path
 
 logSuccess 'Done. Enjoy :]'
