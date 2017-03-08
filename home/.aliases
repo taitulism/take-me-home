@@ -1,6 +1,10 @@
-function _mkcd() { mkdir $1 && cd $1; }
+#!/bin/bash
 
-function _history() {
+function mkcd () {
+    mkdir -pv $1 && cd $1;
+}
+
+function hs () {
     if echo $1 | egrep -q '^[0-9]+$'; then
         history $1
     else
@@ -16,15 +20,12 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
 alias mkdir='mkdir -pv'
-alias mkcd=_mkcd
-
 alias cls='clear'
-alias hs=_history
 
 alias ls='ls --color=auto -AXF --group-directories-first'
 alias lsl='ls -1'
 alias ll='ls -AlF --group-directories-first --human-readable'
-alias lll='ll | less'
+alias lls='ll | less'
 
 alias rm='rm -I --preserve-root'
 alias chown='chown --preserve-root'

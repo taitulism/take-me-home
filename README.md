@@ -27,7 +27,7 @@ Aliases
 * ls = `ls --color=auto -AXF --group-directories-first`
 * lsl = `ls -1`
 * ll = `ls -AlF --group-directories-first --human-readable`
-* lll = `ll | less`
+* lls = `ll | less`
 * rm = `rm -I --preserve-root`
 * chown = `chown --preserve-root`
 * chmod = `chmod --preserve-root`
@@ -43,7 +43,7 @@ Function Aliases
 ```sh
 hs 5      # show last 5 cmds
 hs git    # show all git cmds
-hs git 5  # show last 5 git cmds
+hs git 5  # show all git cmds from last 5
 ```
 
 
@@ -54,7 +54,7 @@ Git Aliases
 * pf = `git push --force`
 * st = `git status`
 * sts = `git status --short`
-* sta = `git status --untracked-files` - show the new files inside a new directory
+* sta = `git status --untracked-files` - show all new files inside a new directory
 * aa = `git add --all`
 * au = `git add --update`
 * ch = `git checkout`
