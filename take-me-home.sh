@@ -42,8 +42,8 @@ ln -sTf $PWD/home/.bashrc ~/.bashrc
 logInfo '- Symlink .aliases'
 ln -sTf $PWD/home/.aliases ~/.aliases
 
-logInfo '- Symlink .git-prompt'
-ln -sTf $PWD/home/.git-prompt ~/.git-prompt
+logInfo '- Symlink git-prompt.sh'
+ln -sTf $PWD/home/git-prompt.sh $home_TMH_path/git-prompt.sh
 
 logInfo '- Symlink .inputrc'
 ln -sTf $PWD/home/.inputrc ~/.inputrc

@@ -34,10 +34,10 @@ set show-all-if-ambiguous on
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # use git-prompt to show git branch status in the command prompt (PS1)
-if [ -e $HOME/.git-prompt ] ; then
-    . $HOME/.git-prompt
+if [ -e $HOME/git-prompt.sh ] ; then
+    source $HOME/git-prompt.sh
 else
-    echo "~/.git-prompt file is missing"
+    echo '~/take-me-home/git-prompt file is missing'
     PS1='\n[\[\033[01;34m\]\w\[\033[00m\]] \$ '
 fi
 
@@ -52,7 +52,7 @@ esac
 
 # load aliases
 if [ -f ~/.aliases ]; then
-    . ~/.aliases
+    source ~/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -60,9 +60,9 @@ fi
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
+        source /usr/share/bash-completion/bash_completion
     elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
+        source /etc/bash_completion
     fi
 fi
 
