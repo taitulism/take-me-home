@@ -38,7 +38,7 @@ logInfo '- Symlink .bashrc'
 ln -sTf $PWD/home/.bashrc ~/.bashrc
 
 logInfo '- Symlink .aliases'
-ln -sTf $PWD/home/.aliases ~/.aliases
+ln -sTf $PWD/home/.aliases $home_TMH_path/.aliases
 
 logInfo '- Symlink git-prompt.sh'
 ln -sTf $PWD/home/git-prompt.sh $home_TMH_path/git-prompt.sh

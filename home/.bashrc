@@ -51,8 +51,8 @@ xterm*|rxvt*)
 esac
 
 # load aliases
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
+if [ -L ~/take-me-home/.aliases ]; then
+    source ~/take-me-home/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable
