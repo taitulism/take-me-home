@@ -34,10 +34,10 @@ set show-all-if-ambiguous on
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # use git-prompt to show git branch status in the command prompt (PS1)
-if [ -e $HOME/git-prompt.sh ] ; then
-    source $HOME/git-prompt.sh
+if [ -L $HOME/take-me-home/git-prompt.sh ] ; then
+    source $HOME/take-me-home/git-prompt.sh
 else
-    echo '~/take-me-home/git-prompt file is missing'
+    echo '~/take-me-home/git-prompt.sh file is missing'
     PS1='\n[\[\033[01;34m\]\w\[\033[00m\]] \$ '
 fi
 
