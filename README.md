@@ -64,6 +64,7 @@ Git Aliases
 * chs = `git checkout staging`
 * com = `git commit`
 * come = `git commit --amend`
+* coma = `git commit -a`
 * cae = `git commit -a --amend`
 * cm = `git commit -m`
 * cme = `git commit --amend -m`

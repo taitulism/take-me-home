@@ -18,6 +18,7 @@
 	chs = checkout staging
 	com = commit
 	come = commit --amend
+	coma = commit -a
 	cae = commit -a --amend
 	cm = commit -m
 	cme = commit --amend -m
