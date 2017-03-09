@@ -1,18 +1,13 @@
 #!/bin/bash
 
-# colors
-RED=$'\033[0;31m'
-RED_BG=$'\033[31;7m'
-GREEN=$'\033[0;32m'
-YELLOW=$'\033[1;33m'
-BLUE=$'\033[0;34m'
-RST_CLR=$'\033[0m' # Reset Color
+_red_bg=$(createColor black red 0)
 
 # symbols
 V="\u2714"
 X="\u2716"
 PLUS="\u2795"
 QUESTION="\u2753"
+PROMPT_ARROW="\u27A4"
 EXCLAMATION="\u2757"
 ARROW_LEFT="\u21B6"
 ARROW_RIGHT="\u21B7"
@@ -54,21 +49,21 @@ gitBranch () {
 
 
         if [ $(hasConflicts) = "0" ] ; then
-            echo "[${RED_BG}${branchName} ${SYMB_CONFLICT} ${RST_CLR}]"
+            echo "[$(paint $_red_bg $branchName $SYMB_CONFLICT)]"
             return
         fi
 
 
         if [ $(hasStaged) = "0" ] ; then
-            branchStatus="${GREEN}${SYMB_STAGED}${RST_CLR} "
+            branchStatus="$(paintGreen $SYMB_STAGED) "
         fi
 
         if [ $(hasChanges) = "0" ] ; then
-            branchStatus="${branchStatus}${RED}${SYMB_CHANGED}${RST_CLR}"
+            branchStatus="$branchStatus$(paintYellow $SYMB_CHANGED)"
         fi
 
         if [ $(hasNewFiles) = "0" ] ; then
-            branchStatus="${branchStatus}${RED}${SYMB_NEWFILES}${RST_CLR} "
+            branchStatus="$branchStatus$(paintRed $SYMB_NEWFILES) "
         fi
 
         echo "[$branchName $branchStatus]"
@@ -165,4 +160,4 @@ hasConflicts () {
     fi
 }
 
-export PS1=$'\n[\[$BLUE\]\w\[$RST_CLR\]]$(gitBranch)\n\[$YELLOW\]\u27A4\[$RST_CLR\]  '
+export PS1=$'\n$(paintBlue \w)]$(gitBranch)\n$(paintYellow $PROMPT_ARROW)  '

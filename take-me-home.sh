@@ -21,8 +21,11 @@ git clone git@github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
 echo '- Clone z.sh'
 git clone git@github.com:rupa/z.git $home_TMH_path/z
 
+# Van-Gosh
 source $home_TMH_path/van-gosh/van-go.sh
 
+
+# backup stuff
 if [ -L ~/.bashrc ] ; then
     backupFile .bashrc
 fi
