@@ -160,4 +160,4 @@ hasConflicts () {
     fi
 }
 
-export PS1=$'\n$(paintBlue \w)]$(gitBranch)\n$(paintYellow $PROMPT_ARROW)  '
+export PS1=$'\n[$(paintBlue \w)]$(gitBranch)\n$(paintYellow $PROMPT_ARROW)  '
