@@ -40,11 +40,15 @@ Aliases
 Function Aliases
 ----------------
 * `mkcd` = mkdir and cd into it
+* `nsh` = create a new shell script with a shebang. For example:  
+```sh
+$ nsh qwe  # creates "qwe.sh"
+```
 * `hs` = history helper tool to show only last N commands. For example:  
 ```sh
-hs 5      # show last 5 cmds
-hs git    # show all git cmds
-hs git 5  # show all git cmds from last 5
+$ hs 5      # show last 5 cmds
+$ hs git    # show all git cmds
+$ hs git 5  # show all git cmds from last 5
 ```
 
 

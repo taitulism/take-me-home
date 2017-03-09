@@ -12,6 +12,10 @@ function hs () {
     fi
 }
 
+function newShellScript () {
+    echo "#!/usr/bin/env bash\n\n" >> "$1".sh
+}
+
 alias cd-='cd -'
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -20,6 +24,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
 alias mkdir='mkdir -pv'
+alias nsh=newShellScript
 alias cls='clear'
 
 alias ls='ls --color=auto -AXF --group-directories-first'
