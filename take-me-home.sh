@@ -17,10 +17,10 @@ mkdir "$home_TMH_backups_path"
 
 bold_steel_blue="\e[1;38;5;69m"
 no_color="\e[0m"
-echo "${bold_steel_blue}* Clone van-gosh${no_color}"
+echo -e "${bold_steel_blue}* Clone van-gosh${no_color}"
 git clone git@github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
 
-echo "${bold_steel_blue}* Clone z.sh${no_color}"
+echo -e "${bold_steel_blue}* Clone z.sh${no_color}"
 git clone git@github.com:rupa/z.git $home_TMH_path/z
 
 unset bold_steel_blue
