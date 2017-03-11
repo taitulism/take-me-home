@@ -165,4 +165,4 @@ BLUE=$'\e[0;34m'
 RST_CLR=$'\e[0m' # Reset Color
 PROMPT_ARROW=$'\u27A4'
 
-export PS1=$'\n[\[$BLUE\]\w\[$RST_CLR\]]$(gitBranch)\n\[$YELLOW\]$PROMPT_ARROW\[$RST_CLR\]  '
+export PS1='\n[\[$BLUE\]\w\[$RST_CLR\]]$(gitBranch)\n\[$YELLOW\]$PROMPT_ARROW\[$RST_CLR\]  '
