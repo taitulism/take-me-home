@@ -33,6 +33,12 @@ set show-all-if-ambiguous on
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# van-gosh - https://github.com/taitulism/van-gosh
+source $HOME/take-me-home/van-gosh/van-go.sh
+
+# z.sh - https://github.com/rupa/z
+source $HOME/take-me-home/z/z.sh
+
 # use git-prompt to show git branch status in the command prompt (PS1)
 if [ -L $HOME/take-me-home/git-prompt.sh ] ; then
     source $HOME/take-me-home/git-prompt.sh
@@ -65,9 +71,3 @@ if ! shopt -oq posix; then
         source /etc/bash_completion
     fi
 fi
-
-# van-gosh - https://github.com/taitulism/van-gosh
-source $HOME/take-me-home/van-gosh/van-go.sh
-
-# z.sh - https://github.com/rupa/z
-source $HOME/take-me-home/z/z.sh
