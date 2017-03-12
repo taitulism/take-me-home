@@ -63,6 +63,7 @@ Git Aliases
 * aa = `git add --all`
 * au = `git add --update`
 * ch = `git checkout`
+* ch- = `git checkout -`
 * chm = `git checkout master`
 * chd = `git checkout develop`
 * chs = `git checkout staging`

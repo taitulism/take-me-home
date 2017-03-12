@@ -13,6 +13,7 @@
 	aa = add --all
 	au = add --update
 	ch = checkout
+	ch- = checkout -
 	chm = checkout master
 	chd = checkout develop
 	chs = checkout staging
