@@ -6,7 +6,9 @@
 [alias]
 	l = log --graph --pretty=format:'%Cred%h - %Cgreen%s %C(cyan)(%ar)' -20
 	f = fetch
+	p = push
 	pf = push --force
+	pl = pull
 	st = status
 	sts = status --short
 	sta = status --untracked-files

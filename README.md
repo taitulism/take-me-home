@@ -56,7 +56,9 @@ Git Aliases
 -----------
 * l = `git log --graph --pretty=format:'%Cred%h - %Cgreen%s %C(cyan)(%ar)' -20`
 * f = `git fetch`
-* pf = `git push --force`
+* p = `push`
+* pf = `push --force`
+* pl = `pull`
 * st = `git status`
 * sts = `git status --short`
 * sta = `git status --untracked-files` - show all new files inside a new directory
