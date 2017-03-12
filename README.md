@@ -92,3 +92,12 @@ Git Aliases
 * list = `git stash list`
 * restore = `git stash pop`
 * del = `git stash clear`
+
+
+git-prompt
+----------
+Workflow example:  
+![workflow example](https://raw.githubusercontent.com/taitulism/take-me-home/master/images/workflow-example.png)
+
+A conflict:  
+![conflict example](https://raw.githubusercontent.com/taitulism/take-me-home/master/images/conflict-example.png)
