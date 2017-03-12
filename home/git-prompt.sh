@@ -2,26 +2,20 @@
 
 _red_bg=$(createColor black red 0)
 
+YELLOW=$'\e[1;33m'
+BLUE=$'\e[0;34m'
+RST_CLR=$'\e[0m' # Reset Color
+
 # symbols
 V="\u2714"
 X="\u2716"
 PLUS="\u2795"
 QUESTION="\u2753"
-PROMPT_ARROW="\u27A4"
 EXCLAMATION="\u2757"
 ARROW_LEFT="\u21B6"
 ARROW_RIGHT="\u21B7"
 TWO_ARROWS="\u21C5"
-
-# parsed symbols
-SYMB_CLEAN="$V"
-SYMB_CONFLICT="$X"
-SYMB_STAGED="$PLUS"
-SYMB_CHANGED="$EXCLAMATION"
-SYMB_NEWFILES="$QUESTION"
-SYMB_AHEAD="$ARROW_RIGHT"
-SYMB_BEHIND="$ARROW_LEFT"
-SYMB_DIVERGED="$TWO_ARROWS"
+PROMPT_ARROW=$'\u27A4'
 
 isGitRepository () {
     git rev-parse --is-inside-work-tree >& /dev/null
@@ -32,43 +26,45 @@ gitBranch () {
     if [ $(isGitRepository) = 0 ] ; then
         local statusText=`git status`
         local branchName=`git rev-parse --abbrev-ref HEAD`
-        local branchStatus=""
-
-        if [ $(isClean) = "0" ] ; then
-            if [ $(isAhead) = "0" ] ; then
-                branchStatus="$SYMB_AHEAD "
-            elif [ $(isBehind) = "0" ] ; then
-                branchStatus="$SYMB_BEHIND "
-            elif [ $(hasDiverged) = "0" ] ; then
-                branchStatus="$SYMB_DIVERGED "
-            fi
-
-            echo -e "[$branchName $SYMB_CLEAN $branchStatus]"
-            return
-        fi
-
+        local backSpace=''
 
         if [ $(hasConflicts) = "0" ] ; then
-            echo -e "[$(paint $_red_bg $branchName $SYMB_CONFLICT)]"
+            echo -e "[$(paint $_red_bg $branchName "$X ")]"
             return
         fi
 
+        local branchStatus=''
 
-        if [ $(hasStaged) = "0" ] ; then
-            branchStatus="$(paintGreen $SYMB_STAGED) "
+        if [ $(isClean) = "0" ] ; then
+            branchStatus+="$V"
+        else
+            if [ $(hasStaged) = "0" ] ; then
+                branchStatus+="$(paintGreen "$PLUS") "
+                backSpace='\b'
+            fi
+
+            if [ $(hasChanges) = "0" ] ; then
+                branchStatus+="$(paintYellow "$EXCLAMATION")"
+                backSpace=''
+            fi
+
+            if [ $(hasNewFiles) = "0" ] ; then
+                branchStatus+="$(paintRed "$QUESTION")"
+                backSpace=''
+            fi
         fi
 
-        if [ $(hasChanges) = "0" ] ; then
-            branchStatus="$branchStatus$(paintYellow $SYMB_CHANGED)"
+        local originBranch
+
+        if [ $(isAhead) = "0" ] ; then
+            originBranch="$ARROW_RIGHT"
+        elif [ $(isBehind) = "0" ] ; then
+            originBranch="$ARROW_LEFT"
+        elif [ $(hasDiverged) = "0" ] ; then
+            originBranch="$TWO_ARROWS"
         fi
 
-        if [ $(hasNewFiles) = "0" ] ; then
-            branchStatus="$branchStatus$(paintRed $SYMB_NEWFILES) "
-        fi
-
-        echo -e "[$branchName $branchStatus]"
-    else
-        echo ''
+        echo -e " ${branchStatus} ${backSpace}($branchName) $originBranch"
     fi
 }
 
@@ -159,10 +155,5 @@ hasConflicts () {
         echo 1
     fi
 }
-
-YELLOW=$'\e[1;33m'
-BLUE=$'\e[0;34m'
-RST_CLR=$'\e[0m' # Reset Color
-PROMPT_ARROW=$'\u27A4'
 
 export PS1='\n[\[$BLUE\]\w\[$RST_CLR\]]$(gitBranch)\n\[$YELLOW\]$PROMPT_ARROW\[$RST_CLR\]  '
