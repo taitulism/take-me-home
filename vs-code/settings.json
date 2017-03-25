@@ -8,5 +8,6 @@
     "files.autoSaveDelay": 60000,
     "files.eol": "\n",
     "editor.minimap.enabled": true,
-    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}"
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
+    "git.confirmSync": false
 }
