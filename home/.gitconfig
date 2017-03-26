@@ -9,6 +9,7 @@
 	p = push
 	pf = push --force
 	pl = pull
+	plf = pull --force
 	st = status
 	sts = status --short
 	sta = status --untracked-files
@@ -29,6 +30,7 @@
 	came = commit --amend -am
 	br = branch
 	dbr = branch -D
+	dbrr = push origin --delete
 	nbr = checkout -b
 	brm = branch --merged
 	brnm = branch --no-merge

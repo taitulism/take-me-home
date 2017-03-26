@@ -59,6 +59,7 @@ Git Aliases
 * p = `push`
 * pf = `push --force`
 * pl = `pull`
+* plf = `pull --force`
 * st = `git status`
 * sts = `git status --short`
 * sta = `git status --untracked-files` - show all new files inside a new directory
@@ -79,6 +80,7 @@ Git Aliases
 * came = `git commit --amend -am`
 * br = `git branch`
 * dbr = `git branch -D`
+* dbrr = `git push origin --delete` - delete remote branch
 * nbr = `git checkout -b`
 * brm = `git branch --merged`
 * brnm = `git branch --no-merge`
