@@ -25,9 +25,9 @@ isGitRepository () {
 getBranchName () {
     local branchName=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 
-    if [ "$branchName" = 'HEAD' ] ; then
-        branchName='<BRANCH>'
-    fi
+    # if [ "$branchName" = 'HEAD' ] ; then
+    #     branchName='<BRANCH>'
+    # fi
 
     echo $branchName
 }
