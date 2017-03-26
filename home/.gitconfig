@@ -29,6 +29,7 @@
 	cam = commit -am
 	came = commit --amend -am
 	br = branch
+	bra= branch --all
 	dbr = branch -D
 	dbrr = push origin --delete
 	nbr = checkout -b
