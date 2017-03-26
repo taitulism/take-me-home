@@ -22,20 +22,10 @@ isGitRepository () {
     echo 0
 }
 
-getBranchName () {
-    local branchName=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-
-    # if [ "$branchName" = 'HEAD' ] ; then
-    #     branchName='<BRANCH>'
-    # fi
-
-    echo $branchName
-}
-
 gitBranch () {
     if [ $(isGitRepository) = 0 ] ; then
         local statusText=`git status 2> /dev/null`
-        local branchName=$(getBranchName)
+        local branchName=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
         local backSpace=''
 
         if [ $(hasConflicts) = "0" ] ; then
