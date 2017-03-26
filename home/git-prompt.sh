@@ -18,14 +18,24 @@ TWO_ARROWS="\u21C5"
 PROMPT_ARROW=$'\u27A4'
 
 isGitRepository () {
-    git rev-parse --is-inside-work-tree >& /dev/null
-    echo $?
+    git rev-parse --is-inside-work-tree &> /dev/null
+    echo 0
+}
+
+getBranchName () {
+    local branchName=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+
+    if [ "$branchName" = 'HEAD' ] ; then
+        branchName='<BRANCH>'
+    fi
+
+    echo $branchName
 }
 
 gitBranch () {
     if [ $(isGitRepository) = 0 ] ; then
-        local statusText=`git status`
-        local branchName=`git rev-parse --abbrev-ref HEAD`
+        local statusText=`git status 2> /dev/null`
+        local branchName=$(getBranchName)
         local backSpace=''
 
         if [ $(hasConflicts) = "0" ] ; then
@@ -68,7 +78,7 @@ gitBranch () {
     fi
 }
 
-isCleanIndicator="nothing to commit"
+isCleanIndicator='nothing to commit'
 isClean () {
     _isClean=`echo $statusText | grep -c "$isCleanIndicator"`
 
@@ -79,7 +89,7 @@ isClean () {
     fi
 }
 
-isAheadIndicator="branch is ahead"
+isAheadIndicator='branch is ahead'
 isAhead () {
     _isAhead=`echo $statusText | grep -c "$isAheadIndicator"`
 
@@ -90,7 +100,7 @@ isAhead () {
     fi
 }
 
-isBehindIndicator="branch is behind"
+isBehindIndicator='branch is behind'
 isBehind () {
     _isBehind=`echo $statusText | grep -c "$isBehindIndicator"`
 
@@ -101,7 +111,7 @@ isBehind () {
     fi
 }
 
-hasDivergedIndicator="have diverged"
+hasDivergedIndicator='have diverged'
 hasDiverged () {
     _hasDiverged=`echo $statusText | grep -c "$hasDivergedIndicator"`
 
@@ -112,7 +122,7 @@ hasDiverged () {
     fi
 }
 
-hasStagedIndicator="Changes to be committed"
+hasStagedIndicator='Changes to be committed'
 hasStaged () {
     _hasStaged=`echo $statusText | grep -c "$hasStagedIndicator"`
 
@@ -123,7 +133,7 @@ hasStaged () {
     fi
 }
 
-hasChangesIndicator="Changes not staged for commit"
+hasChangesIndicator='Changes not staged for commit'
 hasChanges () {
     _hasChanges=`echo $statusText | grep -c "$hasChangesIndicator"`
 
@@ -134,7 +144,7 @@ hasChanges () {
     fi
 }
 
-hasNewFilesIndicator="Untracked files"
+hasNewFilesIndicator='Untracked files'
 hasNewFiles () {
     _hasNewFiles=`echo $statusText | grep -c "$hasNewFilesIndicator"`
 
@@ -145,7 +155,7 @@ hasNewFiles () {
     fi
 }
 
-hasConflictsIndicator="both modified"
+hasConflictsIndicator='both modified'
 hasConflicts () {
     _hasConflicts=`echo $statusText | grep -c "$hasConflictsIndicator"`
 
