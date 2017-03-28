@@ -19,7 +19,7 @@ PROMPT_ARROW=$'\u27A4'
 
 isGitRepository () {
     git rev-parse --is-inside-work-tree &> /dev/null
-    echo 0
+    echo $?
 }
 
 gitBranch () {
