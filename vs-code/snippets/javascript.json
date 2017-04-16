@@ -13,10 +13,31 @@
 		"description": "Log output to console"
 	}
 */
+	"require": {
+		"prefix": "rq",
+		"body": [
+			"require('$1');"
+		],
+		"description": "node require"
+	},
+	"mod.exp": {
+		"prefix": "modx",
+		"body": [
+			"module.exports = $1;"
+		],
+		"description": "node module.exports"
+	},
+	"debug": {
+		"prefix": "dblg",
+		"body": [
+			"console.log('$1', $2);"
+		],
+		"description": "console.log(title, value);"
+	},
 	"console.log": {
 		"prefix": "clg",
 		"body": [
-			"console.log($1, $2);"
+			"console.log($1);"
 		],
 		"description": "console.log();"
 	},
