@@ -14,17 +14,17 @@
 	}
 */
 	"html5 template": {
-		"prefix": "html5",
+		"prefix": "html",
 		"body": [
-			"<!DOCTYPE html>"
-			"<html>"
-				"\t<head>"
-					"\t\t<meta charset=\"UTF-8\">"
-					"\t\t<title></title>"
-				"\t</head>"
-				"\t<body>"
-				"\t\t$1"	
-				"\t</body>"
+			"<!DOCTYPE html>",
+			"<html>",
+				"\t<head>",
+					"\t\t<meta charset=\"utf-8\">",
+					"\t\t<title></title>",
+				"\t</head>",
+				"\t<body>",
+				"\t\t$1",
+				"\t</body>",
 			"</html>"
 		],
 		"description": "HTML5 template"
