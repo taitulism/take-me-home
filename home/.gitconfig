@@ -8,6 +8,7 @@
 	f = fetch
 	p = push
 	pf = push --force
+	pt = push --tags
 	pl = pull
 	plf = pull --force
 	st = status

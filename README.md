@@ -58,6 +58,7 @@ Git Aliases
 * f = `git fetch`
 * p = `push`
 * pf = `push --force`
+* pt = `push --tags`
 * pl = `pull`
 * plf = `pull --force`
 * st = `git status`
