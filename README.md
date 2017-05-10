@@ -35,6 +35,7 @@ Aliases
 * grep = `grep --color=auto`
 * debi = `sudo dpkg -i`
 * upgrade = `sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove`
+* c. = `code .` open current folder in vs-code
 
 
 Function Aliases
