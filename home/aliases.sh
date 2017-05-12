@@ -23,7 +23,6 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
-alias mkdir='mkdir -pv'
 alias nsh=newShellScript
 alias cls='clear'
 

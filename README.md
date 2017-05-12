@@ -22,7 +22,6 @@ Aliases
 * ... = `cd ../../`
 * .... = `cd ../../../`
 * ..... = `cd ../../../../`
-* mkdir = `mkdir -pv`
 * cls = `clear`
 * ls = `ls --color=auto -AXF --group-directories-first`
 * lsl = `ls -1`
