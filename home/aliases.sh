@@ -13,7 +13,7 @@ function hs () {
 }
 
 function newShellScript () {
-    echo "#!/usr/bin/env bash\n\n" >> "$1".sh
+    echo -e "#!/usr/bin/env bash\n\n" >> "$1".sh
 }
 
 alias cd-='cd -'
