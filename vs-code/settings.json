@@ -12,5 +12,6 @@
     "git.confirmSync": false,
     "editor.occurrencesHighlight": false,
     "editor.insertSpaces": false,
-    "editor.multiCursorModifier": "ctrlCmd"
+    "editor.multiCursorModifier": "ctrlCmd",
+    "window.enableMenuBarMnemonics": false
 }
