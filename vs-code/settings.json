@@ -11,5 +11,6 @@
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
     "git.confirmSync": false,
     "editor.occurrencesHighlight": false,
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+    "editor.multiCursorModifier": "ctrlCmd"
 }
