@@ -3,7 +3,6 @@
     "window.zoomLevel": 0,
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "editor.snippetSuggestions": "top",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 60000,
     "files.eol": "\n",
@@ -13,5 +12,9 @@
     "editor.occurrencesHighlight": false,
     "editor.insertSpaces": false,
     "editor.multiCursorModifier": "ctrlCmd",
-    "window.enableMenuBarMnemonics": false
+    "window.enableMenuBarMnemonics": false,
+    "editor.snippetSuggestions": "inline",
+    "editor.quickSuggestionsDelay": 300,
+    "editor.tabCompletion": true,
+    "editor.acceptSuggestionOnEnter": "off"
 }
