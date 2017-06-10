@@ -13,8 +13,9 @@
     "editor.insertSpaces": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "window.enableMenuBarMnemonics": false,
-    "editor.snippetSuggestions": "inline",
+    "editor.snippetSuggestions": "top",
     "editor.quickSuggestionsDelay": 300,
     "editor.tabCompletion": true,
-    "editor.acceptSuggestionOnEnter": "off"
+    "editor.acceptSuggestionOnEnter": "off",
+    "html.suggest.ionic": false
 }
