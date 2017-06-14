@@ -18,5 +18,6 @@
     "editor.tabCompletion": true,
     "editor.acceptSuggestionOnEnter": "off",
     "html.suggest.ionic": false,
-    "emmet.useNewEmmet": true
+    "emmet.useNewEmmet": true,
+    "git.enableSmartCommit": true
 }
