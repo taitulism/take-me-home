@@ -20,5 +20,7 @@
     "emmet.useNewEmmet": true,
     "git.enableSmartCommit": true,
     "editor.autoIndent": true,
-    "editor.minimap.showSlider": "always"
+    "editor.minimap.showSlider": "always",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
 }
