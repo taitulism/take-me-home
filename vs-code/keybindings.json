@@ -22,5 +22,23 @@
     { "key": "f8", "command": "workbench.action.debug.continue", "when": "inDebugMode" },
     { "key": "f5", "command": "workbench.action.debug.restart", "when": "inDebugMode" },
     { "key": "ctrl+m d", "command": "markdown.showPreviewToSide", "when": "editorFocus" },
-    { "key": "escape", "command": "workbench.action.debug.stop", "when": "inDebugMode" }
+    {
+        "key": "escape",
+        "command": "workbench.action.debug.stop",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+\\",
+        "command": "-editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    }
 ]
