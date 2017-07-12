@@ -1,7 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
     "window.zoomLevel": 0,
-    "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 60000,
@@ -19,5 +18,7 @@
     "editor.acceptSuggestionOnEnter": "off",
     "html.suggest.ionic": false,
     "emmet.useNewEmmet": true,
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "editor.autoIndent": true,
+    "editor.minimap.showSlider": "always"
 }
