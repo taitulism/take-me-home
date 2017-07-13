@@ -22,7 +22,6 @@
     "editor.autoIndent": true,
     "editor.minimap.showSlider": "always",
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "files.associations": {
         "*.vue": "html"
     }
