@@ -24,5 +24,6 @@
     "editor.formatOnPaste": true,
     "files.associations": {
         "*.vue": "html"
-    }
+    },
+    "extensions.ignoreRecommendations": false
 }

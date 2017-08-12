@@ -28,5 +28,26 @@
 			"</html>"
 		],
 		"description": "HTML5 template"
+	},
+	"New Component": {
+		"prefix": "vtpl",
+		"body": [
+			"<template>",
+			"",
+			"</template>",
+			"",
+			"<script>",
+			"\t//import ",
+			"\texport default {",
+			"\t\tname: 'main-header',",
+			"\t}",
+			"</script>",
+			"",
+			"<style scoped>",
+			"",
+			"</style>",
+			"",
+		],
+		"description": "New Vue component template, script and style"
 	}
 }
