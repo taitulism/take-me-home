@@ -17,7 +17,6 @@
     "editor.tabCompletion": true,
     "editor.acceptSuggestionOnEnter": "off",
     "html.suggest.ionic": false,
-    "emmet.useNewEmmet": true,
     "git.enableSmartCommit": true,
     "editor.autoIndent": true,
     "editor.minimap.showSlider": "always",
