@@ -106,11 +106,6 @@
         "when": "editorFocus"
     },
     {
-        "key": "escape",
-        "command": "workbench.action.debug.stop",
-        "when": "inDebugMode"
-    },
-    {
         "key": "ctrl+b",
         "command": "-workbench.action.toggleSidebarVisibility"
     },
