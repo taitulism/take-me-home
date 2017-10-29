@@ -73,7 +73,7 @@
 			"\t$3",
 			"},"
 		],
-		"description": "es6 shorthand method declaration"
+		"description": "es6 shorthand named method declaration"
 	},
 	"return object": {
 		"prefix": "ro",
@@ -83,6 +83,25 @@
 			"};"
 		],
 		"description": "return {object} snippet"
+	},
+	"vue data function": {
+		"prefix": "vdf",
+		"body": [
+			"data () {",
+			"\treturn {",
+			"\t\t$1",
+			"\t};",
+			"},"
+		],
+		"description": "vue data function snippet"
+	},
+	"mapGetters": {
+		"prefix": "mg",
+		"body": [
+			"import {mapGetters} from 'vuex';",
+			"...mapGetters([]),"
+		],
+		"description": "vuex mapGetters snippet"
 	},
 	"mocha test describe": {
 		"prefix": "desc",

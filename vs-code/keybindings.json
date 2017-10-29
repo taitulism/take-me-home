@@ -263,5 +263,21 @@
     {
         "key": "ctrl+e",
         "command": "workbench.files.action.focusFilesExplorer"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.focusNextGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+right",
+        "command": "-workbench.action.focusNextGroup"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.focusPreviousGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+left",
+        "command": "-workbench.action.focusPreviousGroup"
     }
 ]

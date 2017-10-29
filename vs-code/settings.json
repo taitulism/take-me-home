@@ -20,7 +20,6 @@
     "git.enableSmartCommit": true,
     "editor.autoIndent": true,
     "editor.minimap.showSlider": "always",
-    "editor.formatOnPaste": true,
     "files.associations": {
         "*.vue": "html"
     },
