@@ -3,9 +3,13 @@
 function backupFile () {
     local filename=$1
 
-    logInfo "* Backup ~/$filename"
 
-    mv ~/$1 $home_TMH_backups_path/$1.bkp
+    if [ -f $home_TMH_backups_path/$1.bkp ] ; then
+        logInfo "* Skipping Backup ~/$filename"
+    else
+        logInfo "* Backup ~/$filename"
+        mv ~/$1 $home_TMH_backups_path/$1.bkp
+    fi
 }
 
 # TMH = Take Me Home
