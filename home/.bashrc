@@ -21,8 +21,8 @@ shopt -s histverify    # when selecting a command from history with "!", don't a
 shopt -s cdable_vars   # set global vars for directories (e.g. cd repos = cd ~/code/repos)
 
 # cdable_vars
-c="$HOME/code"
-r="$HOME/code/repos"
+# c="$HOME/code"
+# r="$HOME/code/repos"
 
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on

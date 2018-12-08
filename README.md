@@ -2,11 +2,15 @@
 My .dotfiles and more
 
 
-Install Stuff
--------------
+Installation
+============
 * `$ git clone git@github.com:taitulism/take-me-home.git`
 * `$ source take-me-home.sh`
+* Update cdable vars in `~/.bashrc` to your liking.
 
+
+Features
+========
 
 .inputrc
 --------
