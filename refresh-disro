@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+echo 'Start updating...'
+sudo apt update
+
+prompt='Upgrade packages? [Y/n] (default "Yes")'
+read -p "$prompt" upgrade
+
+# -z for Zero-length (empty string)
+if [ -z "$upgrade" ] ; then
+	echo 'Start upgrading...'
+	sudo apt upgrade
+fi
+
+echo 'Removing redundant packages...'
+sudo apt autoremove
+
+unset prompt
