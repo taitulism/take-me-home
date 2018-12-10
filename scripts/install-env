@@ -2,32 +2,5 @@
 
 # install git and node+npm if not exist
 
-echo 'Checking git...'
-which git
-
-if [ "$?" = 0 ] ; then
-	echo 'git found'
-else 
-	echo 'Installing git...'
-	sudo apt install git
-fi
-
-echo 'Checking Node.js...'
-which node
-
-if [ "$?" = 0 ] ; then
-	echo 'Node.js found'
-else 
-	echo 'Installing Node.js...'
-	sudo apt install nodejs
-fi
-
-echo 'Checking NPM...'
-which node
-
-if [ "$?" = 0 ] ; then
-	echo 'NPM found'
-else 
-	echo 'Installing NPM...'
-	sudo apt install npm
-fi
+source ./install-git
+source ./install-node

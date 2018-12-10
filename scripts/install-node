@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# install node & npm if not exist
+
+echo 'Checking Node.js...'
+which node &>/dev/null
+
+if [ "$?" = 0 ] ; then
+	node -v
+else 
+	echo 'Installing Node.js...'
+	sudo apt install nodejs
+fi
+
+echo 'Checking NPM...'
+which npm &>/dev/null
+
+if [ "$?" = 0 ] ; then
+	npm -v
+else 
+	echo 'Installing NPM...'
+	sudo apt install npm
+fi
