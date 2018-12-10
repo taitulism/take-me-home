@@ -3,6 +3,7 @@
 echo 'Start updating...'
 sudo apt update
 
+echo
 prompt='Upgrade packages? [Y/n] (default "Yes")'
 read -p "$prompt" upgrade
 
@@ -12,6 +13,7 @@ if [ -z "$upgrade" ] ; then
 	sudo apt upgrade
 fi
 
+echo
 echo 'Removing redundant packages...'
 sudo apt autoremove
 

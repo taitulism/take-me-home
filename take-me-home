@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Update & Upgrade packages
-source ./refresh-disro
+source ./scripts/refresh-disro
 
 # Set Environment (git, node, npm)
-source ./install-env
+source ./scripts/install-env
 
 echo 'Ahh, Feels like home :]'
