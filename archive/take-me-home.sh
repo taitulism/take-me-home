@@ -21,9 +21,12 @@ mkdir "$home_TMH_backups_path"
 
 bold_steel_blue="\e[1;38;5;69m"
 no_color="\e[0m"
+
+# Clone Van-Gosh
 echo -e "${bold_steel_blue}* Clone van-gosh${no_color}"
 git clone https://github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
 
+# Clone z.sh
 echo -e "${bold_steel_blue}* Clone z.sh${no_color}"
 git clone https://github.com:rupa/z.git $home_TMH_path/z
 
@@ -66,7 +69,7 @@ ln -sTf $PWD/home/.gitconfig ~/.gitconfig
 logInfo '* source new ~/.bashrc'
 source ~/.bashrc
 
-
+# Install ag
 logInfo '* sudo install ag (silversearcher)'
 sudo apt-get install silversearcher-ag
 
