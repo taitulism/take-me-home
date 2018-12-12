@@ -10,12 +10,36 @@ source ./scripts/refresh-disro
 # Set Environment (git, node, npm)
 source ./scripts/install-env
 
-# Create TMH folder under ~/
-# TMH = Take Me Home
+# Declare folder paths
+# Create "take-me-home" folder under ~/
+# and a "backups" folder inside it.
+repo="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TMH=$HOME/take-me-home
 backups=$TMH/backups
 
 mkdir "$TMH"
 mkdir "$backups"
+
+# Backup original .bashrc if not exists
+if [ -f ~/.bashrc ] ; then 
+    if [ -f $backups/original-bashrc.bkp ] ; then
+        echo "* Skipping Backup ~/.bashrc"
+    else
+        echo "* Backup ~/.bashrc (~/take-me-home/backups/original-bashrc.bkp"
+        mv ~/.bashrc $backups/original-bashrc.bkp
+    fi
+fi
+
+# Copy alternate .bashrc to "take-me-home"
+cp $repo/home/.bashrc $TMH/
+
+# Hard link .bashrc
+ln -Tf $repo/home/.bashrc ~/.bashrc
+
+
+
+
+
+
 
 echo 'Ahh, Feels like home :]'

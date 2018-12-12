@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-tmh="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-
-echo "$tmh"

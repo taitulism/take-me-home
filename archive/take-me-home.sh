@@ -47,6 +47,9 @@ fi
 
 
 # create symlinks
+# -s = --symbolic:            Make symbolic links instead of hard links
+# -T = --no-target-directory: Treat LINK_NAME as a normal file always
+# -f = --force:               Remove existing destination files
 logInfo '* Symlink .bashrc'
 ln -sTf $PWD/home/.bashrc ~/.bashrc
 
