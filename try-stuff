@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 
-# install git and node+npm if not exist
+tmh="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo 'Checking git...'
-which git &>/dev/null
 
-# $? is the last command exit code (0=success, 1=fail)
-if [ "$?" = 0 ] ; then
-	git --version
-else 
-	echo 'Installing git...'
-fi
+echo "$tmh"

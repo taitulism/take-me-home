@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 
+#.=.=.=.=.=.=.=
+# Take Me Home
+#.=.=.=.=.=.=.=
+
 # Update & Upgrade packages
 source ./scripts/refresh-disro
 
 # Set Environment (git, node, npm)
 source ./scripts/install-env
+
+# Create TMH folder under ~/
+# TMH = Take Me Home
+TMH=$HOME/take-me-home
+backups=$TMH/backups
+
+mkdir "$TMH"
+mkdir "$backups"
 
 echo 'Ahh, Feels like home :]'

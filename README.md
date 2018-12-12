@@ -6,16 +6,16 @@ My .dotfiles and more
 ================
 ## git installed?
 ```sh
-# replace <DIR>
-$ git clone git@github.com:taitulism/take-me-home.git <DIR>
+# install in ~/
+$ git clone git@github.com:taitulism/take-me-home.git ~/take-me-home
 ```
 
 ## No git?
 Download zip and run:
 ```sh
-# replace <DIR>
-$ unzip take-me-home-master.zip -d <DIR>
-$ cd <DIR>
+# unzip to ~/take-me-home
+$ unzip take-me-home-master.zip -d ~/take-me-home
+$ cd ~/take-me-home
 ```
 
 **Run**

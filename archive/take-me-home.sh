@@ -3,7 +3,6 @@
 function backupFile () {
     local filename=$1
 
-
     if [ -f $home_TMH_backups_path/$1.bkp ] ; then
         logInfo "* Skipping Backup ~/$filename"
     else
