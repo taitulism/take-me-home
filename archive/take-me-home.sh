@@ -53,6 +53,8 @@ fi
 logInfo '* Symlink .bashrc'
 ln -sTf $PWD/home/.bashrc ~/.bashrc
 
+
+
 logInfo '* Symlink aliases.sh'
 ln -sTf $PWD/home/aliases.sh $home_TMH_path/aliases.sh
 
@@ -65,8 +67,12 @@ ln -sTf $PWD/home/.inputrc ~/.inputrc
 logInfo '* Symlink .vimrc'
 ln -sTf $PWD/home/.vimrc ~/.vimrc
 
+
+
 logInfo '* Symlink .gitconfig'
 ln -sTf $PWD/home/.gitconfig ~/.gitconfig
+
+
 
 logInfo '* source new ~/.bashrc'
 source ~/.bashrc

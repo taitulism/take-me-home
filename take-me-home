@@ -34,7 +34,11 @@ fi
 ln -f $repo/home/.bashrc $HOME
 
 
-
+# Hard links
+ln -f $repo/home/aliases.sh    $TMH/aliases.sh
+ln -f $repo/home/git-prompt.sh $TMH/git-prompt.sh
+ln -f $repo/home/.inputrc      $HOME/.inputrc
+ln -f $repo/home/.vimrc        $HOME/.vimrc
 
 
 
