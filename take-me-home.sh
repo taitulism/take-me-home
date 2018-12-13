@@ -3,9 +3,13 @@
 function backupFile () {
     local filename=$1
 
-    logInfo "* Backup ~/$filename"
 
-    mv ~/$1 $home_TMH_backups_path/$1.bkp
+    if [ -f $home_TMH_backups_path/$1.bkp ] ; then
+        logInfo "* Skipping Backup ~/$filename"
+    else
+        logInfo "* Backup ~/$filename"
+        mv ~/$1 $home_TMH_backups_path/$1.bkp
+    fi
 }
 
 # TMH = Take Me Home
@@ -18,10 +22,10 @@ mkdir "$home_TMH_backups_path"
 bold_steel_blue="\e[1;38;5;69m"
 no_color="\e[0m"
 echo -e "${bold_steel_blue}* Clone van-gosh${no_color}"
-git clone git@github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
+git clone https://github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
 
 echo -e "${bold_steel_blue}* Clone z.sh${no_color}"
-git clone git@github.com:rupa/z.git $home_TMH_path/z
+git clone https://github.com:rupa/z.git $home_TMH_path/z
 
 unset bold_steel_blue
 unset no_color

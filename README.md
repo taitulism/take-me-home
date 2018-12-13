@@ -2,11 +2,15 @@
 My .dotfiles and more
 
 
-Install Stuff
--------------
+Installation
+============
 * `$ git clone git@github.com:taitulism/take-me-home.git`
 * `$ source take-me-home.sh`
+* Update cdable vars in `~/.bashrc` to your liking.
 
+
+Features
+========
 
 .inputrc
 --------
@@ -82,6 +86,7 @@ Git Aliases
 * came = `git commit --amend -am`
 * br = `git branch`
 * bra = `git branch --all` - show remote branches too
+* rnbr = `git branch -m` - rename branch
 * dbr = `git branch -D`
 * dbrr = `git push origin --delete` - delete remote branch
 * nbr = `git checkout -b`
