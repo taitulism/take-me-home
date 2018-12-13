@@ -30,11 +30,8 @@ if [ -f ~/.bashrc ] ; then
     fi
 fi
 
-# Copy alternate .bashrc to "take-me-home"
-cp $repo/home/.bashrc $TMH/
-
 # Hard link .bashrc
-ln -Tf $repo/home/.bashrc ~/.bashrc
+ln -f $repo/home/.bashrc $HOME
 
 
 
