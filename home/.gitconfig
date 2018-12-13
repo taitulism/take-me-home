@@ -30,7 +30,8 @@
 	cam = commit -am
 	came = commit --amend -am
 	br = branch
-	bra= branch --all
+	bra = branch --all
+	rnbr = branch -m
 	dbr = branch -D
 	dbrr = push origin --delete
 	nbr = checkout -b
@@ -49,3 +50,5 @@
 	list = stash list
 	restore = stash pop
 	del = stash clear
+[core]
+	editor = vim
