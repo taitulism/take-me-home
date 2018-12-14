@@ -4,8 +4,7 @@
 # .inputrc
 # .vimrc
 
-TMH=$HOME/take-me-home
-BACKUPS=$TMH/backups
+BACKUPS=$HOME/take-me-home/backups
 
 if [ -f $BACKUPS/original-bashrc.bkp ] ; then
     cp $BACKUPS/original-bashrc.bkp ~/.bashrc
