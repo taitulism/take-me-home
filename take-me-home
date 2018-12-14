@@ -26,7 +26,7 @@ REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TMH=$HOME/take-me-home
 BACKUPS=$TMH/backups
 
-# -p, --parents     no error if existing, make parent directories as needed
+# -p, --parents = no error if existing, make parent directories as needed
 mkdir -p "$TMH"
 mkdir -p "$BACKUPS"
 
