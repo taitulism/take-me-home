@@ -4,6 +4,9 @@
 # Take Me Home
 #.=.=.=.=.=.=.=
 
+# Uninstall/Revert this script by running:
+# `$ source leave-home`
+
 # Update & Upgrade packages
 source ./scripts/refresh-disro
 
@@ -13,34 +16,65 @@ source ./scripts/install-env
 # Declare folder paths
 # Create "take-me-home" folder under ~/
 # and a "backups" folder inside it.
-repo="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TMH=$HOME/take-me-home
-backups=$TMH/backups
+BACKUPS=$TMH/backups
 
-mkdir "$TMH"
-mkdir "$backups"
+# -p, --parents     no error if existing, make parent directories as needed
+mkdir -p "$TMH"
+mkdir -p "$BACKUPS"
 
-# Backup original .bashrc if not exists
-if [ -f ~/.bashrc ] ; then 
-    if [ -f $backups/original-bashrc.bkp ] ; then
-        echo "* Skipping Backup ~/.bashrc"
-    else
-        echo "* Backup ~/.bashrc (~/take-me-home/backups/original-bashrc.bkp"
-        mv ~/.bashrc $backups/original-bashrc.bkp
-    fi
+# .bashrc
+# .inputrc
+# .vimrc
+# --------
+# Should be backed up when file is currently in use but wasn't already backed up
+# The following checks: if file exists at $HOME and not in $BACKUPS
+#
+# `ln -f` for overwriting existing files/links.
+# Relevant on a second run and above, when backup exists and the current
+# used file (in ~/) is already alternated.
+
+# .bashrc
+if [ -f ~/.bashrc ] && ! [ -f $BACKUPS/original-bashrc.bkp ] ; then
+    mv ~/.bashrc $BACKUPS/original-bashrc.bkp
+fi
+ln -f $REPO/home/.bashrc $HOME
+
+# .inputrc
+if [ -f ~/.inputrc ] && ! [ -f $BACKUPS/original-inputrc.bkp ] ; then
+    mv ~/.inputrc $BACKUPS/original-inputrc.bkp
+fi
+ln -f $REPO/home/.inputrc $HOME
+
+# .vimrc
+if [ -f ~/.vimrc ] && ! [ -f $BACKUPS/original-vimrc.bkp ] ; then
+    mv ~/.vimrc $BACKUPS/original-vimrc.bkp
+fi
+ln -f $REPO/home/.vimrc $HOME
+
+
+# aliases
+# git-prompt
+# ----------
+# Both are .bashrc's dependencies.
+# Both can be installed (linked at $TMH) safely, without backup
+
+# aliases
+if [ ! -f $TMH/aliases.sh ] ; then
+    ln $REPO/home/aliases.sh $TMH
 fi
 
-# Hard link .bashrc
-ln -f $repo/home/.bashrc $HOME
+# git-prompt
+if [ ! -f $TMH/git-prompt.sh ] ; then
+    ln $REPO/home/git-prompt.sh $TMH
+fi
 
+git clone https://github.com:rupa/z.git $TMH/z
+# git clone https://github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
 
-# Hard links
-ln -f $repo/home/aliases.sh    $TMH/aliases.sh
-ln -f $repo/home/git-prompt.sh $TMH/git-prompt.sh
-ln -f $repo/home/.inputrc      $HOME/.inputrc
-ln -f $repo/home/.vimrc        $HOME/.vimrc
-
-
-
+unset REPO
+unset TMH
+unset BACKUPS
 
 echo 'Ahh, Feels like home :]'
