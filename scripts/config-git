@@ -12,10 +12,10 @@ read -p 'email: '
 git config --global push.default current
 
 # Colors
-git config --global color.diff.meta white bold ul
-git config --global color.diff.frag magenta bold
-git config --global color.diff.old red
-git config --global color.diff.new green
+git config --global color.diff.meta 'white bold ul'
+git config --global color.diff.frag 'magenta bold'
+git config --global color.diff.old 'red'
+git config --global color.diff.new 'green'
 
 # Aliases
 git config --global alias.l "log --graph --pretty=format:'%Cred%h - %Cgreen%s %C(cyan)(%ar)' -20"
