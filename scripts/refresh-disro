@@ -4,11 +4,10 @@ echo 'Start updating...'
 sudo apt update
 
 echo
-prompt='Upgrade packages? [Y/n] (default "Yes")'
-read -p "$prompt" upgrade
+read -p 'Upgrade packages? [Y/n] '
 
 # -z for Zero-length (empty string)
-if [ -z "$upgrade" ] ; then
+if [ "$REPLY" != 'n' ] ; then
 	echo 'Start upgrading...'
 	sudo apt upgrade
 fi
@@ -16,5 +15,3 @@ fi
 echo
 echo 'Removing redundant packages...'
 sudo apt autoremove
-
-unset prompt
