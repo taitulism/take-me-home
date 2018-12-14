@@ -8,17 +8,10 @@ if [ "$?" = 0 ] ; then
 	echo
 	npm outdated -g
 	echo
+	read -p 'Upgrade npm to latest version? [Y/n] '
 
-	prompt='Upgrade npm to latest version? [Y/n] '
-	read -p "$prompt" shouldUpdate
-
-	if [ "$shouldUpdate" != 'n' ] ; then
-		sudo npm install npm@latest -g
-	fi
+	[ "$REPLY" != 'n' ] && sudo npm install npm@latest -g
 else 
 	echo 'Installing NPM...'
 	sudo apt install npm
 fi
-
-unset prompt
-unset shouldUpdate
