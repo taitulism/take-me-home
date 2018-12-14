@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+which npm &>/dev/null
+
+if [ "$?" = 0 ] ; then
+	# TODO: this returns a list of global outdated packages.
+	# grep only npm line
+	echo
+	npm outdated -g
+	echo
+
+	prompt='Upgrade npm to latest version? [Y/n] '
+	read -p "$prompt" shouldUpdate
+
+	if [ "$shouldUpdate" != 'n' ] ; then
+		sudo npm install npm@latest -g
+	fi
+else 
+	echo 'Installing NPM...'
+	sudo apt install npm
+fi
+
+unset prompt
+unset shouldUpdate
