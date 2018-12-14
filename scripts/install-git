@@ -11,3 +11,28 @@ else
 	echo 'Installing git...'
 	sudo apt install git
 fi
+
+prompt='Config git? [Y/n] (default "Yes")'
+read -p "$prompt" configGit
+
+# TODO: handle answer for "no"
+# -z for Zero-length (empty string)
+if [ "$configGit" = 'n' ] ; then
+	unset configGit
+else
+	prompt='username:'
+	read -p "$prompt" username
+	prompt='email:'
+	read -p "$prompt" email
+
+	# TODO: check the double quotes
+	git config --global user.name "$username"
+	git config --global user.email "$email"
+
+	unset username
+	unset email
+
+	git config --global push.default current
+	
+
+fi
