@@ -10,6 +10,7 @@
 # * Backup and hard link: .bashrc/.inputrc/.vimrc
 # * Hard link aliases & git-prompt scripts to "~/take-me-home"
 # * Install z.sh
+# * Install Van-Go.sh
 
 # Uninstall/Revert this script by running:
 # `$ source leave-home`
@@ -76,7 +77,7 @@ if [ ! -f $TMH/git-prompt.sh ] ; then
 fi
 
 git clone https://github.com:rupa/z.git $TMH/z
-# git clone https://github.com:taitulism/van-gosh.git $TMH/van-gosh
+git clone https://github.com:taitulism/van-gosh.git $TMH/van-gosh
 
 unset REPO
 unset TMH
