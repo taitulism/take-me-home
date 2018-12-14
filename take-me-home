@@ -19,9 +19,9 @@
 source ./scripts/refresh-disro
 
 # Set Environment (git, node, npm)
-source ./install-git
-source ./config-git
-source ./install-node
+source ./scripts/install-git
+source ./scripts/config-git
+source ./scripts/install-node
 
 # Folder paths
 REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -74,8 +74,8 @@ ln -f $REPO/home/.vimrc $HOME
 # git-prompt
 [ ! -f $TMH/git-prompt.sh ] && ln $REPO/home/git-prompt.sh $TMH
 
-git clone https://github.com:rupa/z.git $TMH/z
-git clone https://github.com:taitulism/van-gosh.git $TMH/van-gosh
+git clone https://github.com/rupa/z.git $TMH/z
+git clone https://github.com/taitulism/van-gosh.git $TMH/van-gosh
 
 unset REPO
 unset TMH

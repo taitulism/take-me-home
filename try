@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+read -p 'username: '
+[ -n "$REPLY" ] && \
+	git config --global user.name "$REPLY"
+
+kill -INT $$
+
 function prompt () {
 	read -p "$1"
 	echo $REPLY
@@ -19,7 +25,6 @@ agree=`promptYesNo 'q? '`
 
 unset agree
 
-kill -INT $$
 
 hasFile=`[ ! -f qwe ]; echo $?`
 # or

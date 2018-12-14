@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 read -p 'username: '
-[ -n "$REPLY"] && \
+[ -n "$REPLY" ] && \
 	git config --global user.name "$REPLY"
 
 read -p 'email: '
-[ -n "$REPLY"] && \
+[ -n "$REPLY" ] && \
 	git config --global user.email "$REPLY"
 
 

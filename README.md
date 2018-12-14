@@ -13,9 +13,9 @@ $ git clone git@github.com:taitulism/take-me-home.git ~/take-me-home
 ## No git?
 Download zip and run:
 ```sh
-# unzip to ~/take-me-home
-$ unzip take-me-home-master.zip -d ~/take-me-home
-$ cd ~/take-me-home
+$ unzip ~/Downloads/take-me-home-master.zip -d ~/code/take-me-home
+$ cd ~/code/take-me-home
+$ source take-me-home
 ```
 
 **Run**
