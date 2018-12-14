@@ -1,3 +1,17 @@
 #!/usr/bin/env bash
 
-echo 123 >> file.txt
+
+# kill -INT $$
+
+hasFile=`[ ! -f qwe ]; echo $?`
+# or
+function fileExists () {
+    local file=$1
+
+    [ -f $file ] && echo 1 || echo 0
+}
+
+if [ $hasFile ]
+then echo $hasFile
+else echo nope
+fi

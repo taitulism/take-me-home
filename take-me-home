@@ -3,6 +3,13 @@
 #.=.=.=.=.=.=.=
 # Take Me Home
 #.=.=.=.=.=.=.=
+# * Refresh-distro
+# * Install git, node, npm
+# * Create "~/take-me-home" folder
+# * Create "~/take-me-home/backups" folder
+# * Backup and hard link: .bashrc/.inputrc/.vimrc
+# * Hard link aliases & git-prompt scripts to "~/take-me-home"
+# * Install z.sh
 
 # Uninstall/Revert this script by running:
 # `$ source leave-home`
@@ -14,8 +21,7 @@ source ./scripts/refresh-disro
 source ./scripts/install-env
 
 # Declare folder paths
-# Create "take-me-home" folder under ~/
-# and a "backups" folder inside it.
+# 
 REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TMH=$HOME/take-me-home
 BACKUPS=$TMH/backups
@@ -71,7 +77,7 @@ if [ ! -f $TMH/git-prompt.sh ] ; then
 fi
 
 git clone https://github.com:rupa/z.git $TMH/z
-# git clone https://github.com:taitulism/van-gosh.git $home_TMH_path/van-gosh
+# git clone https://github.com:taitulism/van-gosh.git $TMH/van-gosh
 
 unset REPO
 unset TMH
