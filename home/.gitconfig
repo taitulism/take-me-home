@@ -1,0 +1,52 @@
+[user]
+	name = Taitu Lizenbaum
+	email = email@gmail.com
+[push]
+	default = current
+[alias]
+	l = log --graph --pretty=format:'%Cred%h - %Cgreen%s %C(cyan)(%ar)' -20
+	f = fetch
+	p = push
+	pf = push --force
+	pt = push --tags
+	pl = pull
+	plf = pull --force
+	st = status
+	sts = status --short
+	sta = status --untracked-files
+	aa = add --all
+	au = add --update
+	ch = checkout
+	ch- = checkout -
+	chm = checkout master
+	chd = checkout develop
+	chs = checkout staging
+	com = commit
+	come = commit --amend
+	coma = commit -a
+	cae = commit -a --amend
+	cm = commit -m
+	cme = commit --amend -m
+	cam = commit -am
+	came = commit --amend -am
+	br = branch
+	bra = branch --all
+	rnbr = git branch -m	
+	dbr = branch -D
+	dbrr = push origin --delete
+	nbr = checkout -b
+	brm = branch --merged
+	brnm = branch --no-merge
+	ms = merge --squash
+	hr = reset --hard
+	df = diff
+	dfh = diff HEAD
+	df1 = diff HEAD~1
+	df2 = diff HEAD~2
+	df3 = diff HEAD~3
+	dfw = diff --word-diff
+	dfwh = diff --word-diff HEAD
+	save = stash save
+	list = stash list
+	restore = stash pop
+	del = stash clear
