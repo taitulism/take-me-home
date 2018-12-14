@@ -20,8 +20,7 @@ source ./scripts/refresh-disro
 # Set Environment (git, node, npm)
 source ./scripts/install-env
 
-# Declare folder paths
-# 
+# Folder paths
 REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TMH=$HOME/take-me-home
 BACKUPS=$TMH/backups
