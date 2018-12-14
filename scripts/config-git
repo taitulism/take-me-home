@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
-prompt='username:'
-read -p "$prompt" username
-prompt='email:'
-read -p "$prompt" email
+read -p 'username: '
+[ -n "$REPLY"] && \
+	git config --global user.name "$REPLY"
 
-# TODO: check the double quotes
-git config --global user.name "$username"
-git config --global user.email "$email"
+read -p 'email: '
+[ -n "$REPLY"] && \
+	git config --global user.email "$REPLY"
 
-unset username
-unset email
 
 git config --global push.default current
 

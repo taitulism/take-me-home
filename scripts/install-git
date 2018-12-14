@@ -11,13 +11,3 @@ else
 	echo 'Installing git...'
 	sudo apt install git
 fi
-
-prompt='Config git? [Y/n] (default "Yes")'
-read -p "$prompt" configGit
-
-# TODO: handle answer for "no"
-# -z for Zero-length (empty string)
-if [ "$configGit" = 'n' ] ; then
-	unset configGit
-	source ./config-git
-fi

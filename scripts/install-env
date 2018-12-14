@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# install git and node+npm if not exist
-
-source ./install-git
-source ./install-node

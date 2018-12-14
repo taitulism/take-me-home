@@ -19,7 +19,9 @@
 source ./scripts/refresh-disro
 
 # Set Environment (git, node, npm)
-source ./scripts/install-env
+source ./install-git
+source ./config-git
+source ./install-node
 
 # Folder paths
 REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
