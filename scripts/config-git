@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+prompt='username:'
+read -p "$prompt" username
+prompt='email:'
+read -p "$prompt" email
+
+# TODO: check the double quotes
+git config --global user.name "$username"
+git config --global user.email "$email"
+
+unset username
+unset email
+
+git config --global push.default current
+
+git config --global alias.l "log --graph --pretty=format:'%Cred%h - %Cgreen%s %C(cyan)(%ar)' -20"
+git config --global alias.f 'fetch'
+git config --global alias.p 'push'
+git config --global alias.pf 'push --force'
+git config --global alias.pt 'push --tags'
+git config --global alias.pl 'pull'
+git config --global alias.plf 'pull --force'
+git config --global alias.st 'status'
+git config --global alias.sts 'status --short'
+git config --global alias.sta 'status --untracked-files'
+git config --global alias.aa 'add --all'
+git config --global alias.au 'add --update'
+git config --global alias.ch 'checkout'
+git config --global alias.ch- 'checkout -'
+git config --global alias.chm 'checkout master'
+git config --global alias.chd 'checkout develop'
+git config --global alias.chs 'checkout staging'
+git config --global alias.com 'commit'
+git config --global alias.come 'commit --amend'
+git config --global alias.coma 'commit -a'
+git config --global alias.cae 'commit -a --amend'
+git config --global alias.cm 'commit -m'
+git config --global alias.cme 'commit --amend -m'
+git config --global alias.cam 'commit -am'
+git config --global alias.came 'commit --amend -am'
+git config --global alias.br 'branch'
+git config --global alias.bra 'branch --all'
+git config --global alias.rnbr 'git branch -m	'
+git config --global alias.dbr 'branch -D'
+git config --global alias.dbrr 'push origin --delete'
+git config --global alias.nbr 'checkout -b'
+git config --global alias.brm 'branch --merged'
+git config --global alias.brnm 'branch --no-merge'
+git config --global alias.ms 'merge --squash'
+git config --global alias.hr 'reset --hard'
+git config --global alias.df 'diff'
+git config --global alias.dfh 'diff HEAD'
+
+# ReThink
+git config --global alias.df1 'diff HEAD~1'
+git config --global alias.df2 'diff HEAD~2'
+git config --global alias.df3 'diff HEAD~3'
+git config --global alias.dfw 'diff --word-diff'
+git config --global alias.dfwh 'diff --word-diff HEAD'
+git config --global alias.save 'stash save'
+git config --global alias.list 'stash list'
+git config --global alias.restore 'stash pop'
+git config --global alias.del 'stash clear'
