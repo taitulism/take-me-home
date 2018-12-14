@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
-read -p 'git username: '
+echo
+echo 'Configuring git...'
+
+read -p 'Enter git username: '
 [ -n "$REPLY" ] && \
 	git config --global user.name "$REPLY"
 
-read -p 'git email: '
+read -p 'Enter git email: '
 [ -n "$REPLY" ] && \
 	git config --global user.email "$REPLY"
 

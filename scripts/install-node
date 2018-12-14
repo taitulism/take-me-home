@@ -2,6 +2,7 @@
 
 # install node & npm if not exist
 
+echo
 echo 'Checking Node.js...'
 which node &>/dev/null
 
@@ -12,6 +13,7 @@ else
 	sudo apt install nodejs
 fi
 
+echo
 echo 'Checking NPM...'
 which npm &>/dev/null
 

@@ -15,16 +15,17 @@
 # Uninstall/Revert this script by running:
 # `$ source leave-home`
 
+REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # Update & Upgrade packages
-source ./scripts/refresh-disro
+source $REPO/scripts/refresh-disro
 
 # Set Environment (git, node, npm)
-source ./scripts/install-git
-source ./scripts/config-git
-source ./scripts/install-node
+source $REPO/scripts/install-git
+source $REPO/scripts/config-git
+source $REPO/scripts/install-node
 
 # Folder paths
-REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TMH=$HOME/take-me-home
 BACKUPS=$TMH/backups
 
@@ -74,7 +75,9 @@ ln -f $REPO/home/.vimrc $HOME
 # git-prompt
 [ ! -f $TMH/git-prompt.sh ] && ln $REPO/home/git-prompt.sh $TMH
 
+echo
 git clone https://github.com/rupa/z.git $TMH/z
+echo
 git clone https://github.com/taitulism/van-gosh.git $TMH/van-gosh
 
 unset REPO
