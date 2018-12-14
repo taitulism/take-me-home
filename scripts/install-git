@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# install git if not exist
+
+echo 'Checking git...'
+which git &>/dev/null
+
+if [ "$?" = 0 ] ; then
+	git --version
+else 
+	echo 'Installing git...'
+	sudo apt install git
+fi

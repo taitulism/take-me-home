@@ -2,11 +2,54 @@
 My .dotfiles and more
 
 
-Installation
-============
-* `$ git clone git@github.com:taitulism/take-me-home.git`
-* `$ source take-me-home.sh`
+**Installation**
+================
+## git installed?
+```sh
+# install in ~/
+$ git clone git@github.com:taitulism/take-me-home.git ~/take-me-home
+```
+
+## No git?
+Download zip and run:
+```sh
+# unzip to ~/take-me-home
+$ unzip take-me-home-master.zip -d ~/take-me-home
+$ cd ~/take-me-home
+```
+
+**Run**
+=======
+```sh
+$ source take-me-home
+```
+
+# After Installation
 * Update cdable vars in `~/.bashrc` to your liking.
+
+
+
+Scripts
+=======
+Update packages
+```sh
+$ source new-distro
+```
+Install Node + npm
+```sh
+$ source node-npm
+```
+Install git
+```sh
+$ source install-git
+```
+
+
+```sh
+# old
+$ source take-me-home.sh
+```
+
 
 
 Features

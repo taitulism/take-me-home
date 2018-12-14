@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# .bashrc
+# .inputrc
+# .vimrc
+
+BACKUPS=$HOME/take-me-home/backups
+
+if [ -f $BACKUPS/original-bashrc.bkp ] ; then
+    cp $BACKUPS/original-bashrc.bkp ~/.bashrc
+fi
+
+if [ -f $BACKUPS/original-inputrc.bkp ] ; then
+    cp $BACKUPS/original-inputrc.bkp ~/.inputrc
+fi
+
+if [ -f $BACKUPS/original-vimrc.bkp ] ; then
+    cp $BACKUPS/original-vimrc.bkp ~/.vimrc
+fi
+
+rm -rf ~/take-me-home
+
+echo done.

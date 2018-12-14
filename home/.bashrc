@@ -40,7 +40,7 @@ source $HOME/take-me-home/van-gosh/van-go.sh
 source $HOME/take-me-home/z/z.sh
 
 # use git-prompt to show git branch status in the command prompt (PS1)
-if [ -L $HOME/take-me-home/git-prompt.sh ] ; then
+if [ -f $HOME/take-me-home/git-prompt.sh ] ; then
     source $HOME/take-me-home/git-prompt.sh
 else
     echo '~/take-me-home/git-prompt.sh file is missing'
@@ -57,7 +57,7 @@ xterm*|rxvt*)
 esac
 
 # load aliases
-if [ -L ~/take-me-home/aliases.sh ]; then
+if [ -f ~/take-me-home/aliases.sh ]; then
     source ~/take-me-home/aliases.sh
 fi
 

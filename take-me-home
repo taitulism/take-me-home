@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+#.=.=.=.=.=.=.=
+# Take Me Home
+#.=.=.=.=.=.=.=
+# * Refresh-distro
+# * Install git, node, npm
+# * Create "~/take-me-home" folder
+# * Create "~/take-me-home/backups" folder
+# * Backup and hard link: .bashrc/.inputrc/.vimrc
+# * Hard link aliases & git-prompt scripts to "~/take-me-home"
+# * Install z.sh
+# * Install Van-Go.sh
+
+# Uninstall/Revert this script by running:
+# `$ source leave-home`
+
+# Update & Upgrade packages
+source ./scripts/refresh-disro
+
+# Set Environment (git, node, npm)
+source ./install-git
+source ./config-git
+source ./install-node
+
+# Folder paths
+REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+TMH=$HOME/take-me-home
+BACKUPS=$TMH/backups
+
+# -p, --parents = no error if existing, make parent directories as needed
+mkdir -p "$TMH"
+mkdir -p "$BACKUPS"
+
+# .bashrc
+# .inputrc
+# .vimrc
+# --------
+# Should be backed up when file is currently in use but wasn't already backed up
+# The following checks: if file exists at $HOME and not in $BACKUPS
+#
+# `ln -f` for overwriting existing files/links.
+# Relevant on a second run and above, when backup exists and the current
+# used file (in ~/) is already alternated.
+
+# .bashrc
+if [ -f ~/.bashrc ] && ! [ -f $BACKUPS/original-bashrc.bkp ] ; then
+    mv ~/.bashrc $BACKUPS/original-bashrc.bkp
+fi
+ln -f $REPO/home/.bashrc $HOME
+
+# .inputrc
+if [ -f ~/.inputrc ] && ! [ -f $BACKUPS/original-inputrc.bkp ] ; then
+    mv ~/.inputrc $BACKUPS/original-inputrc.bkp
+fi
+ln -f $REPO/home/.inputrc $HOME
+
+# .vimrc
+if [ -f ~/.vimrc ] && ! [ -f $BACKUPS/original-vimrc.bkp ] ; then
+    mv ~/.vimrc $BACKUPS/original-vimrc.bkp
+fi
+ln -f $REPO/home/.vimrc $HOME
+
+
+# aliases
+# git-prompt
+# ----------
+# Both are .bashrc's dependencies.
+# Both can be installed (linked at $TMH) safely, without backup
+
+# aliases
+[ ! -f $TMH/aliases.sh ] && ln $REPO/home/aliases.sh $TMH
+
+# git-prompt
+[ ! -f $TMH/git-prompt.sh ] && ln $REPO/home/git-prompt.sh $TMH
+
+git clone https://github.com:rupa/z.git $TMH/z
+git clone https://github.com:taitulism/van-gosh.git $TMH/van-gosh
+
+unset REPO
+unset TMH
+unset BACKUPS
+
+echo 'Ahh, Feels like home :]'

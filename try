@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+function prompt () {
+	read -p "$1"
+	echo $REPLY
+}
+
+function promptYesNo () {
+    local answer=$(prompt "$1")
+
+    if [ "$answer" != 'n' ]
+        then echo 1
+        else echo
+    fi
+}
+
+agree=`promptYesNo 'q? '`
+[ "$agree" ] && echo agree || echo not
+
+unset agree
+
+kill -INT $$
+
+hasFile=`[ ! -f qwe ]; echo $?`
+# or
+function fileExists () {
+    local file=$1
+
+    [ -f $file ] && echo 1 || echo 0
+}
+
+if [ $hasFile ]
+then echo $hasFile
+else echo nope
+fi

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo 'Start updating...'
+sudo apt update
+
+echo
+read -p 'Upgrade packages? [Y/n] '
+
+# -z for Zero-length (empty string)
+if [ "$REPLY" != 'n' ] ; then
+	echo 'Start upgrading...'
+	sudo apt upgrade
+fi
+
+echo
+echo 'Removing redundant packages...'
+sudo apt autoremove
