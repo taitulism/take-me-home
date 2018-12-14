@@ -13,7 +13,7 @@ $ git clone git@github.com:taitulism/take-me-home.git ~/take-me-home
 ## No git?
 Download zip and run:
 ```sh
-$ wget --no-check-certificate -P ~/Downloads https://github.com/taitulism/take-me-home/archive/take-me-home.zip
+$ wget --no-check-certificate -O ~/Downloads/TMH.zip https://github.com/taitulism/take-me-home/archive/master.zip
 $ mkdir ~/code
 $ unzip ~/Downloads/take-me-home-master.zip -d ~/code
 source ~/code/take-me-home-master/take-me-home
