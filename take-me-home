@@ -69,14 +69,10 @@ ln -f $REPO/home/.vimrc $HOME
 # Both can be installed (linked at $TMH) safely, without backup
 
 # aliases
-if [ ! -f $TMH/aliases.sh ] ; then
-    ln $REPO/home/aliases.sh $TMH
-fi
+[ ! -f $TMH/aliases.sh ] && ln $REPO/home/aliases.sh $TMH
 
 # git-prompt
-if [ ! -f $TMH/git-prompt.sh ] ; then
-    ln $REPO/home/git-prompt.sh $TMH
-fi
+[ ! -f $TMH/git-prompt.sh ] && ln $REPO/home/git-prompt.sh $TMH
 
 git clone https://github.com:rupa/z.git $TMH/z
 git clone https://github.com:taitulism/van-gosh.git $TMH/van-gosh
