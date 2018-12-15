@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# install git if not exist
-
 echo
 echo 'Checking git...'
 which git &>/dev/null

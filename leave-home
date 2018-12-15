@@ -3,25 +3,31 @@
 # .bashrc
 # .inputrc
 # .vimrc
+# This script restores original files from the backup folder to $HOME (~/)
 
-backups=$HOME/take-me-home/backups
+BACKUPS=$HOME/take-me-home/backups
 
-if [ -f $backups/original-bashrc.bkp ] ; then
+# Restore .bashrc
+if [ -f $BACKUPS/original-bashrc.bkp ] ; then
     rm ~/.bashrc
-    cp $backups/original-bashrc.bkp ~/.bashrc
+    cp $BACKUPS/original-bashrc.bkp ~/.bashrc
     source ~/.bashrc
 fi
 
-if [ -f $backups/original-inputrc.bkp ] ; then
+# Restore .inputrc
+if [ -f $BACKUPS/original-inputrc.bkp ] ; then
     rm ~/.inputrc
-    cp $backups/original-inputrc.bkp ~/.inputrc
+    cp $BACKUPS/original-inputrc.bkp ~/.inputrc
 fi
 
-if [ -f $backups/original-vimrc.bkp ] ; then
+# Restore .vimrc
+if [ -f $BACKUPS/original-vimrc.bkp ] ; then
     rm ~/.vimrc
-    cp $backups/original-vimrc.bkp ~/.vimrc
+    cp $BACKUPS/original-vimrc.bkp ~/.vimrc
 fi
 
 rm -rf ~/take-me-home
 
 echo done.
+
+unset BACKUPS

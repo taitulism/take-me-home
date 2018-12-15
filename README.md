@@ -11,18 +11,21 @@ $ git clone git@github.com:taitulism/take-me-home.git ~/take-me-home
 ```
 
 ## No git?
-Download zip and run:
+>Change `~/Downloads` folder if needed
+
+Download zip and extract:
 ```sh
-$ wget --no-check-certificate -O ~/Downloads/TMH.zip https://github.com/taitulism/take-me-home/archive/master.zip
-$ mkdir ~/code
-$ unzip ~/Downloads/TMH.zip -d ~/code
-$ source ~/code/take-me-home-master/take-me-home
+# download zip
+wget --no-check-certificate -O ~/Downloads/TMH.zip https://github.com/taitulism/take-me-home/archive/master.zip
+
+# extract files
+unzip ~/Downloads/TMH.zip
 ```
 
 **Run**
 =======
 ```sh
-$ source take-me-home
+$ source ~/Downloads/take-me-home-master/take-me-home
 ```
 
 # After Installation
@@ -32,23 +35,21 @@ $ source take-me-home
 
 Scripts
 =======
-Update packages
+Update packages (apt update, upgrade, autoremove)
 ```sh
-$ source new-distro
+$ source refresh-distro
 ```
+
 Install Node + npm
 ```sh
-$ source node-npm
+$ source install-node
+$ source install-npm
 ```
-Install git
+
+Git - install & config
 ```sh
 $ source install-git
-```
-
-
-```sh
-# old
-$ source take-me-home.sh
+$ source config-git
 ```
 
 

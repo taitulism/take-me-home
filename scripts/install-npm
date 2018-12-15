@@ -5,8 +5,6 @@ echo 'Checking NPM...'
 which npm &>/dev/null
 
 if [ "$?" = 0 ] ; then
-	# TODO: this returns a list of global outdated packages.
-	# grep only npm line
 	echo
 	npm outdated -g
 	echo

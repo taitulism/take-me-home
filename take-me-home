@@ -15,9 +15,10 @@
 # Uninstall/Revert this script by running:
 # `$ source leave-home`
 
+# Store the repo's folder path (this script-file's directory)
 REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Update & Upgrade packages
+# Update & Upgrade distro's packages
 source $REPO/scripts/refresh-disro
 
 # Set Environment (git, node, npm)
@@ -34,50 +35,56 @@ BACKUPS=$TMH/backups
 mkdir -p "$TMH"
 mkdir -p "$BACKUPS"
 
-# .bashrc
-# .inputrc
-# .vimrc
-# --------
-# Should be backed up when file is currently in use but wasn't already backed up
-# The following checks: if file exists at $HOME and not in $BACKUPS
-#
+# The following section alternates the following files:
+#   ~/.bashrc
+#   ~/.inputrc
+#   ~/.vimrc
+# ---------------
+# If a file exists then it must have a backup - but only once, originals only,
+# in case this script runs more than once. (see './leave-home' for more info)
+# 
+# So backup file if exists in $HOME (~/) but not in $backeups
 # `ln -f` for overwriting existing files/links.
-# Relevant on a second run and above, when backup exists and the current
-# used file (in ~/) is already alternated.
 
 # .bashrc
-if [ -f ~/.bashrc ] && ! [ -f $BACKUPS/original-bashrc.bkp ] ; then
+if [ -f ~/.bashrc ] && [ ! -f $BACKUPS/original-bashrc.bkp ] ; then
     mv ~/.bashrc $BACKUPS/original-bashrc.bkp
 fi
 ln -f $REPO/home/.bashrc $HOME
 
 # .inputrc
-if [ -f ~/.inputrc ] && ! [ -f $BACKUPS/original-inputrc.bkp ] ; then
+if [ -f ~/.inputrc ] && [ ! -f $BACKUPS/original-inputrc.bkp ] ; then
     mv ~/.inputrc $BACKUPS/original-inputrc.bkp
 fi
 ln -f $REPO/home/.inputrc $HOME
 
 # .vimrc
-if [ -f ~/.vimrc ] && ! [ -f $BACKUPS/original-vimrc.bkp ] ; then
+if [ -f ~/.vimrc ] && [ ! -f $BACKUPS/original-vimrc.bkp ] ; then
     mv ~/.vimrc $BACKUPS/original-vimrc.bkp
 fi
 ln -f $REPO/home/.vimrc $HOME
 
 
+# take-me-home dependency scripts:
 # aliases
 # git-prompt
 # ----------
-# Both are .bashrc's dependencies.
-# Both can be installed (linked at $TMH) safely, without backup
+# `ln -f` for overwriting existing links.
 
 # aliases
-[ ! -f $TMH/aliases.sh ] && ln $REPO/home/aliases.sh $TMH
+ln -f $REPO/home/aliases.sh $TMH
 
 # git-prompt
-[ ! -f $TMH/git-prompt.sh ] && ln $REPO/home/git-prompt.sh $TMH
+ln -f $REPO/home/git-prompt.sh $TMH
 
+
+# z, jump around
+# https://github.com/rupa/z
 echo
 git clone https://github.com/rupa/z.git $TMH/z
+
+# Van-Gosh, A color library for 256 colors terminals
+# https://github.com/taitulism/van-gosh
 echo
 git clone https://github.com/taitulism/van-gosh.git $TMH/van-gosh
 
