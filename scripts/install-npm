@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo
+echo 'Checking NPM...'
 which npm &>/dev/null
 
 if [ "$?" = 0 ] ; then

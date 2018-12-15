@@ -24,6 +24,7 @@ source $REPO/scripts/refresh-disro
 source $REPO/scripts/install-git
 source $REPO/scripts/config-git
 source $REPO/scripts/install-node
+source $REPO/scripts/install-npm
 
 # Folder paths
 TMH=$HOME/take-me-home
