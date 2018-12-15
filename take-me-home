@@ -84,4 +84,6 @@ unset REPO
 unset TMH
 unset BACKUPS
 
+source ~/.bashrc
+
 echo 'Ahh, Feels like home :]'
