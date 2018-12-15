@@ -15,10 +15,8 @@ Download zip and run:
 ```sh
 $ wget --no-check-certificate -O ~/Downloads/TMH.zip https://github.com/taitulism/take-me-home/archive/master.zip
 $ mkdir ~/code
-$ unzip ~/Downloads/take-me-home-master.zip -d ~/code
-source ~/code/take-me-home-master/take-me-home
-$ cd ~/code/take-me-home
-$ source take-me-home
+$ unzip ~/Downloads/TMH.zip -d ~/code
+$ source ~/code/take-me-home-master/take-me-home
 ```
 
 **Run**
