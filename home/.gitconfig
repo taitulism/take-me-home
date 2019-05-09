@@ -1,6 +1,6 @@
 [user]
 	name = Taitu Lizenbaum
-	email = email@gmail.com
+	email = taitu.dev@gmail@gmail.com
 [push]
 	default = current
 [alias]
@@ -52,3 +52,5 @@
 	del = stash clear
 [core]
 	editor = vim
+[credential]
+	helper = store

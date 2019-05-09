@@ -3,7 +3,7 @@
 _red_bg=$(createColor black red 0)
 
 YELLOW=$'\e[1;33m'
-BLUE=$'\e[0;34m'
+BLUE=$'\e[0;35m'
 RST_CLR=$'\e[0m' # Reset Color
 
 # symbols
