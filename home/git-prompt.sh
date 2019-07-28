@@ -3,7 +3,7 @@
 _red_bg=$(createColor black red 0)
 
 YELLOW=$'\e[1;33m'
-BLUE=$'\e[0;35m'
+PINK=$'\e[0;35m'
 RST_CLR=$'\e[0m' # Reset Color
 
 # symbols
@@ -156,4 +156,4 @@ hasConflicts () {
     fi
 }
 
-export PS1='\n[\[$BLUE\]\w\[$RST_CLR\]]$(gitBranch)\n\[$YELLOW\]$PROMPT_ARROW\[$RST_CLR\]  '
+export PS1='\n[\[$PINK\]\w\[$RST_CLR\]]$(gitBranch)\n\[$YELLOW\]$PROMPT_ARROW\[$RST_CLR\]  '
