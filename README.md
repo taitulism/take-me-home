@@ -137,6 +137,7 @@ Git Aliases
 * nbr = `git checkout -b`
 * brm = `git branch --merged`
 * brnm = `git branch --no-merge`
+* m = `git merge`
 * ms = `git merge --squash`
 * hr = `git reset --hard`
 * df = `git diff`

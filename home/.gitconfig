@@ -37,6 +37,7 @@
 	nbr = checkout -b
 	brm = branch --merged
 	brnm = branch --no-merge
+	m = merge
 	ms = merge --squash
 	hr = reset --hard
 	df = diff
