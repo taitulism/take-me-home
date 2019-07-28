@@ -14,12 +14,12 @@
 	}
 */
 	"html5 template": {
-		"prefix": "html",
+		"prefix": "html5",
 		"body": [
 			"<!DOCTYPE html>",
 			"<html>",
 				"\t<head>",
-					"\t\t<meta charset=\"utf-8\">",
+					"\t\t<meta charset=\"UTF-8\">",
 					"\t\t<title></title>",
 				"\t</head>",
 				"\t<body>",
@@ -29,23 +29,24 @@
 		],
 		"description": "HTML5 template"
 	},
-	"New Component": {
-		"prefix": "vtpl",
+	"vue component": {
+		"prefix": "vcomp",
 		"body": [
 			"<template>",
 			"",
 			"</template>",
 			"",
-			"<script>",
-			"\texport default {",
-			"\t}",
+			"<script lang=\"ts\">",
+				"\timport { Component, Vue } from 'vue-property-decorator';",
+				"\t// import Component_Name from '@/components/',
+				"\t",
+				"\t@Component({",
+					"\t\tprops: {}",
+				"\t",
+				"\t})",
+				"\texport default class Component_Name extends Vue {}",
 			"</script>",
-			"",
-			"<style scoped>",
-			"",
-			"</style>",
-			"",
 		],
-		"description": "New Vue component template, script and style"
+		"description": "vue component template"
 	}
 }

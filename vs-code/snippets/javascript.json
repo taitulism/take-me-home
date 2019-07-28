@@ -13,6 +13,20 @@
 		"description": "Log output to console"
 	}
 */
+	"console.log": {
+		"prefix": "clg",
+		"body": [
+			"console.log($1);"
+		],
+		"description": "console.log();"
+	},
+	"console.log with title": {
+		"prefix": "clgg",
+		"body": [
+			"console.log('$1', $1);"
+		],
+		"description": "console.log('X', X);"
+	},
 	"require": {
 		"prefix": "rq",
 		"body": [
@@ -20,33 +34,12 @@
 		],
 		"description": "node require"
 	},
-	"mod.exp": {
-		"prefix": "modx",
+	"module.exports": {
+		"prefix": "mdx",
 		"body": [
 			"module.exports = $1;"
 		],
-		"description": "node module.exports"
-	},
-	"debug": {
-		"prefix": "dblg",
-		"body": [
-			"console.log('$1', $2);"
-		],
-		"description": "console.log(title, value);"
-	},
-	"console.log": {
-		"prefix": "clg",
-		"body": [
-			"console.log($1$2);"
-		],
-		"description": "console.log();"
-	},
-	"titled console.log": {
-		"prefix": "clg2",
-		"body": [
-			"console.log('$1', $1);"
-		],
-		"description": "console.log();"
+		"description": "node's module.exports"
 	},
 	"function": {
 		"prefix": "fn",
@@ -57,7 +50,7 @@
 		],
 		"description": "function declaration"
 	},
-	"arrow function declaration": {
+	"arrow function (multiline)": {
 		"prefix": "afn",
 		"body": [
 			"($1) => {",
@@ -66,14 +59,31 @@
 		],
 		"description": "arrow function declaration"
 	},
+	"arrow function (one line)": {
+		"prefix": "afn1",
+		"body": [
+			"($1) => $2;"
+		],
+		"description": "arrow function expression"
+	},
 	"es6 shorthand method": {
 		"prefix": "nfn",
 		"body": [
-			"$1 ($2) {",
+			"$1($2) {",
 			"\t$3",
-			"},"
+			"}"
 		],
-		"description": "es6 shorthand named method declaration"
+		"description": "named function declaration"
+	},
+	"es6 shorthand method with comma": {
+		"prefix": "nfnc",
+		"body": [
+			"($1) {",
+			"\t$2",
+			"},",
+			""
+		],
+		"description": "named function declaration with a comma"
 	},
 	"return object": {
 		"prefix": "ro",
@@ -103,29 +113,106 @@
 		],
 		"description": "vuex mapGetters snippet"
 	},
-	"mocha test describe": {
+	"test describe": {
 		"prefix": "desc",
 		"body": [
 			"describe('$1', ($2) => {",
 			"\t$3",
 			"});"
 		],
-		"description": "mocha describe"
+		"description": "test describe"
 	},
-	"mocha test it": {
-		"prefix": "itt",
+	"test beforeEach": {
+		"prefix": "mbe",
+		"body": [
+			"beforeEach(function ($1) {",
+			"\t$2",
+			"});"
+		],
+		"description": "test beforeEach()"
+	},
+	"test afterEach": {
+		"prefix": "mae",
+		"body": [
+			"afterEach(function ($1) {",
+			"\t$2",
+			"});"
+		],
+		"description": "test afterEach()"
+	},
+	"test block": {
+		"prefix": "jt",
+		"body": [
+			"test('$1', ($2) => {",
+			"\t$3",
+			"});"
+		],
+		"description": "test block"
+	},
+	"test it": {
+		"prefix": "it",
 		"body": [
 			"it('$1', ($2) => {",
 			"\t$3",
 			"});"
 		],
-		"description": "mocha it"
+		"description": "test it"
 	},
-	"chai assertion": {
+	"expect assertion": {
 		"prefix": "exp",
 		"body": [
 			"expect($1).to.$2"
 		],
-		"description": "chai expect"
-	}
+		"description": "expect(X).toBe(Y)"
+	},
+	"return new Promise": {
+		"prefix": "rnp",
+		"body": [
+			"return new Promise((resolve, reject) => {",
+			"\t$1",
+			"});"
+		],
+		"description": "return New Promise"
+	},
+	"iife": {
+		"prefix": "iife",
+		"body": [
+			"(() => {",
+			"\t$1",
+			"})();"
+		],
+		"description": "iife - Immediately Invoked Function Expression"
+	},
+	"iiafe": {
+		"prefix": "iiafe",
+		"body": [
+			"(async () => {",
+			"\t$1",
+			"})();"
+		],
+		"description": "iiafe - Immediately Invoked Async Function Expression"
+	},
+	"try-catch": {
+		"prefix": "trc",
+		"body": [
+			"try {",
+			"\t$1",
+			"}",
+			"catch (ex) {",
+			"\t",
+			"}",
+		],
+		"description": "try-catch block"
+	},
+	"then-catch": {
+		"prefix": "thc",
+		"body": [
+			"then(($1) => {",
+			"\t$2",
+			"}, (err) => {",
+			"\t",
+			"})",
+		],
+		"description": "then-catch block"
+	},
 }
