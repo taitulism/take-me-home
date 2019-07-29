@@ -34,6 +34,7 @@
 	rnbr = branch -m
 	dbr = branch -D
 	dbrr = push origin --delete
+	dbr2 = !git branch -D $1 && git push origin --delete
 	nbr = checkout -b
 	brm = branch --merged
 	brnm = branch --no-merge

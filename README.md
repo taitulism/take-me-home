@@ -134,6 +134,7 @@ Git Aliases
 * rnbr = `git branch -m` - rename branch
 * dbr = `git branch -D`
 * dbrr = `git push origin --delete` - delete remote branch
+* dbr2 = `!git branch -D $1 && git push origin --delete` - delete both local & remote branches
 * nbr = `git checkout -b`
 * brm = `git branch --merged`
 * brnm = `git branch --no-merge`
